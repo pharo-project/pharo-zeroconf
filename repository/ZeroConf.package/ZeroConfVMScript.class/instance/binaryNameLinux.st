@@ -1,3 +1,3 @@
 accessing
 binaryNameLinux
-	^ self type lowercase
+	^ self type asLowercase
