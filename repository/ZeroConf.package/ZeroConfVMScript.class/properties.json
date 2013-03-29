@@ -1,0 +1,14 @@
+{
+	"category" : "ZeroConf",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"type" ],
+	"name" : "ZeroConfVMScript",
+	"pools" : [
+		 ],
+	"super" : "ZeroConfBashScript",
+	"type" : "normal" }

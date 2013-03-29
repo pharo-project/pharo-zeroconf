@@ -1,0 +1,1 @@
+I generate a downloader script in bash for the given type of VM

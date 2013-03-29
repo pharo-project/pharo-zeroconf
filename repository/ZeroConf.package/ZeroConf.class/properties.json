@@ -1,0 +1,14 @@
+{
+	"category" : "ZeroConf",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "ZeroConf",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

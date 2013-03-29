@@ -1,0 +1,15 @@
+{
+	"category" : "ZeroConf",
+	"classinstvars" : [
+		"imageVersion" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"release",
+		"version" ],
+	"name" : "ZeroConfImageScript",
+	"pools" : [
+		 ],
+	"super" : "ZeroConfBashScript",
+	"type" : "normal" }
