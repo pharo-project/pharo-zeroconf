@@ -1,3 +1,5 @@
 accessing
 defaultBasename
-	^ 'vm'
+	^ release 
+		ifNil: [ 'vm' ]
+		ifNotNil: [ 'vm', self release capitalized ]

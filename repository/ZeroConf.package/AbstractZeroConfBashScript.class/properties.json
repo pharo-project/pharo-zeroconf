@@ -1,0 +1,17 @@
+{
+	"category" : "ZeroConf",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"baseUrl",
+		"fileBaseUrl",
+		"basename",
+		"outputStream" ],
+	"name" : "AbstractZeroConfBashScript",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -6,9 +6,11 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"type" ],
+		"type",
+		"release",
+		"vmDirectory" ],
 	"name" : "ZeroConfVMScript",
 	"pools" : [
 		 ],
-	"super" : "ZeroConfBashScript",
+	"super" : "AbstractZeroConfBashScript",
 	"type" : "normal" }

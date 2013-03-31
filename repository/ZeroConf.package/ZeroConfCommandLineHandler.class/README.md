@@ -1,0 +1,1 @@
+I generate zeroconf commandline scripts next to the current image.

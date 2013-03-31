@@ -1,8 +1,25 @@
 {
 	"class" : {
-		 },
+		"latestPharo" : "CamilloBruni 3/30/2013 15:13",
+		"latestPharoS" : "CamilloBruni 3/30/2013 15:18",
+		"pharo" : "CamilloBruni 3/30/2013 10:40",
+		"pharoS" : "CamilloBruni 3/30/2013 15:12",
+		"type:" : "CamilloBruni 3/30/2013 10:40" },
 	"instance" : {
-		"defaultBasename" : "CamilloBruni 3/29/2013 18:16",
+		"artifactDescription" : "CamilloBruni 3/30/2013 12:45",
+		"defaultBasename" : "CamilloBruni 3/30/2013 15:15",
+		"description" : "CamilloBruni 3/30/2013 10:42",
+		"generateBody" : "CamilloBruni 3/30/2013 11:06",
+		"generateDetectSystemProperties" : "CamilloBruni 3/30/2013 11:06",
+		"generateDownloadSources" : "CamilloBruni 3/30/2013 11:06",
+		"generateDownloadVM" : "CamilloBruni 3/30/2013 14:37",
+		"generateLinuxScriptTest" : "CamilloBruni 3/30/2013 11:06",
+		"generateVMScriptCreator" : "CamilloBruni 3/30/2013 11:06",
+		"release" : "CamilloBruni 3/30/2013 14:33",
+		"release:" : "CamilloBruni 3/30/2013 14:33",
 		"type" : "CamilloBruni 3/29/2013 18:11",
 		"type:" : "CamilloBruni 3/29/2013 18:11",
-		"vmBaseUrl" : "CamilloBruni 3/29/2013 18:12" } }
+		"vmBaseUrl" : "CamilloBruni 3/29/2013 18:12",
+		"vmDirectory" : "CamilloBruni 3/30/2013 14:37",
+		"vmDirectory:" : "CamilloBruni 3/30/2013 14:37",
+		"vmFolderName" : "CamilloBruni 3/30/2013 09:38" } }

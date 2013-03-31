@@ -1,3 +1,4 @@
 accessing
 defaultBasename
-	^ self version
+	^ version 
+		ifNil: [ self release asString ]

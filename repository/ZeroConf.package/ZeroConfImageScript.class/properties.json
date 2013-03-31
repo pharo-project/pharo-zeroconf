@@ -11,5 +11,5 @@
 	"name" : "ZeroConfImageScript",
 	"pools" : [
 		 ],
-	"super" : "ZeroConfBashScript",
+	"super" : "AbstractZeroConfBashScript",
 	"type" : "normal" }

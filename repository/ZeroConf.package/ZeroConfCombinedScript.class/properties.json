@@ -1,0 +1,14 @@
+{
+	"category" : "ZeroConf",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"scripts" ],
+	"name" : "ZeroConfCombinedScript",
+	"pools" : [
+		 ],
+	"super" : "AbstractZeroConfBashScript",
+	"type" : "normal" }

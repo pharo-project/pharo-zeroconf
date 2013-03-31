@@ -1,3 +1,3 @@
 accessing
 imageUrl
-	^ self fileBaseUrl / 'image' / self release / self imageZip
+	^ self fileBaseUrl / 'image' / self release asString / self imageZip

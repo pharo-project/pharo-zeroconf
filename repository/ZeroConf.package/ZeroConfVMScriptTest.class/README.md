@@ -1,0 +1,1 @@
+I test the default VM zeroconf scripts.

@@ -1,0 +1,20 @@
+{
+	"class" : {
+		"pharo14Vm" : "CamilloBruni 3/30/2013 14:55",
+		"pharo20LatestVM" : "CamilloBruni 3/30/2013 14:55",
+		"pharo20Vm" : "CamilloBruni 3/30/2013 14:54",
+		"pharo30LatestVM" : "CamilloBruni 3/30/2013 14:54",
+		"pharo30Vm" : "CamilloBruni 3/30/2013 14:54",
+		"with:" : "CamilloBruni 3/30/2013 14:58",
+		"with:with:" : "CamilloBruni 3/30/2013 14:58" },
+	"instance" : {
+		"," : "CamilloBruni 3/30/2013 15:01",
+		"add:" : "CamilloBruni 3/30/2013 14:58",
+		"addAll:" : "CamilloBruni 3/30/2013 14:58",
+		"artifactDescription" : "CamilloBruni 3/30/2013 13:32",
+		"defaultBasename" : "CamilloBruni 3/30/2013 14:02",
+		"description" : "CamilloBruni 3/30/2013 13:36",
+		"generateBody" : "CamilloBruni 3/30/2013 13:34",
+		"generateDownloadFor:" : "CamilloBruni 3/30/2013 13:33",
+		"initialize" : "CamilloBruni 3/30/2013 13:00",
+		"scripts" : "CamilloBruni 3/30/2013 13:30" } }

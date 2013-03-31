@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"isAbstract" : "CamilloBruni 3/30/2013 13:19" },
+	"instance" : {
+		"cleanUp" : "CamilloBruni 3/30/2013 13:55",
+		"generateTest" : "CamilloBruni 3/30/2013 13:17",
+		"helpTest" : "CamilloBruni 3/30/2013 13:18",
+		"runScriptTest:" : "CamilloBruni 3/30/2013 13:16",
+		"runTest" : "CamilloBruni 3/30/2013 13:19" } }
