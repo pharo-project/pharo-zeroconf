@@ -1,4 +1,4 @@
-script generation
+script generation html
 generateHtmlArtifactDescription
 	
 	| artifactDescription |

@@ -1,4 +1,4 @@
-script generation
+script generation html
 generateHtmlStyle
 	self << '
 	BODY, TABLE { 
@@ -9,5 +9,7 @@ generateHtmlStyle
 		padding: 0.5em 0.8em;
 		border-radius: 0.5em;
 	}
-	
+	A { 
+		color: black;
+	}
 	'
