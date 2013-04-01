@@ -18,4 +18,6 @@ mv "$PHARO_IMAGE" Pharo.image
 PHARO_CHANGES=`find $TMP_DIR -name \*.changes`
 mv "$PHARO_CHANGES" Pharo.changes;
 
+rm -r $TMP_DIR >> /dev/null
+
 echo $PHARO_IMAGE'; cr

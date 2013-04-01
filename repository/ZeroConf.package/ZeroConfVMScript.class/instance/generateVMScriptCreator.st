@@ -36,6 +36,8 @@ set -f
 	chmod +x $VM_SCRIPT
 }
 
-echoerr "Creating starter scripts vm.sh and vm-ui.sh"
+echoerr "Creating starter scripts pharo and pharo-ui"
 create_vm_script "vm.sh"
-create_vm_script "vm-ui.sh"'; cr
+create_vm_script "vm-ui.sh"
+create_vm_script "pharo"
+create_vm_script "pharo-ui"'; cr

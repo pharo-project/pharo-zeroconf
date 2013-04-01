@@ -1,0 +1,3 @@
+accessing
+binaryNameLinux
+	^ self type
