@@ -1,3 +1,3 @@
 accessing
 description
-	^ 'This script downloads the latest Pharo ', self release asString, ' Image.'.
+	^ 'This script downloads the latest ', self imageName, ' ', self release asString, ' Image.'.

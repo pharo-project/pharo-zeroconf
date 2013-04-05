@@ -1,5 +1,5 @@
 combining
 combinedWithAll: combinedScripts
-	^ (ZeroConfCombinedScript with: self)
+	^ (self combiningScript with: self)
 		addAll: combinedScripts scripts;
 		yourself

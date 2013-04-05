@@ -1,3 +1,3 @@
 combining
 combinedWith: otherScript
-	^ (ZeroConfCombinedScript with: self), otherScript
+	^ (self combiningScript with: self), otherScript
