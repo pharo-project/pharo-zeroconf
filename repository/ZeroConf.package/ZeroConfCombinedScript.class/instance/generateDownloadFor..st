@@ -1,3 +1,3 @@
 script generation
 generateDownloadFor: script
-	self << 'wget --quiet -O - '; print: script url; << ' | bash '; cr.
+	self << '$DOWNLOAD '; print: script url; << ' | bash '; cr.

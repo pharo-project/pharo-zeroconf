@@ -1,0 +1,14 @@
+{
+	"category" : "ZeroConf",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "ZeroConfPharoImageScript",
+	"pools" : [
+		 ],
+	"super" : "ZeroConfImageScript",
+	"type" : "normal" }

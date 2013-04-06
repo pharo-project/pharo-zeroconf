@@ -7,7 +7,7 @@ generateBody
 echoerr "    $IMAGE_URL"
 
 TMP_DIR=`mktemp -d image.XXXXX`
-wget --quiet --output-document=$TMP_DIR/image.zip $IMAGE_URL
+$DOWNLOAD_TO$TMP_DIR/image.zip $IMAGE_URL
 
 unzip -q -d $TMP_DIR $TMP_DIR/image.zip
 rm -rf image image.zip

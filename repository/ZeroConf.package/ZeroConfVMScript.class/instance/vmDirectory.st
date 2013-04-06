@@ -1,3 +1,3 @@
 accessing
 vmDirectory
-	^ vmDirectory ifNil: [ 'vm' asFileReference ]
+	^ vmDirectory ifNil: [ 'pharo-vm' asFileReference ]

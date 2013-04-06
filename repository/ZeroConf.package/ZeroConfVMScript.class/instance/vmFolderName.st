@@ -1,3 +1,3 @@
 accessing
 vmFolderName
-	^ 'vm'
+	^ self vmDirectory basename

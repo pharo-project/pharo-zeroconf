@@ -3,4 +3,5 @@ generateHelpMessage
 	self
 		<< self description; cr; 
 		<< 'The following artifacts are created:'; cr;
-		generateArtifactsDescription.
+		generateArtifactsDescription; cr;
+		<< self additionalHelp

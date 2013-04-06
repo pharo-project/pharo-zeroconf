@@ -10,7 +10,10 @@
 		"fileBaseUrl",
 		"basename",
 		"outputStream",
-		"combiningScript" ],
+		"combiningScript",
+		"additionalHelp",
+		"additionalHtmlHelp",
+		"url" ],
 	"name" : "AbstractZeroConfBashScript",
 	"pools" : [
 		 ],

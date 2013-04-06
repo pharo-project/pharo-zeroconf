@@ -1,17 +1,11 @@
 {
 	"class" : {
-		"pharo11" : "CamilloBruni 3/30/2013 14:41",
-		"pharo12" : "CamilloBruni 3/30/2013 14:45",
-		"pharo13" : "CamilloBruni 3/30/2013 14:45",
-		"pharo14" : "CamilloBruni 3/30/2013 14:45",
-		"pharo20" : "CamilloBruni 3/30/2013 14:45",
-		"pharo30" : "CamilloBruni 3/30/2013 14:45",
-		"pharo:" : "CamilloBruni 3/30/2013 15:08" },
+		 },
 	"instance" : {
 		"artifactDescription" : "AndreiChis 4/5/2013 09:44",
 		"defaultBasename" : "CamilloBruni 3/30/2013 15:08",
 		"description" : "AndreiChis 4/5/2013 09:46",
-		"generateBody" : "AndreiChis 4/5/2013 09:39",
+		"generateBody" : "CamilloBruni 4/6/2013 18:07",
 		"imageName" : "AndreiChis 4/5/2013 09:33",
 		"imageUrl" : "CamilloBruni 3/30/2013 15:09",
 		"imageZip" : "CamilloBruni 3/29/2013 18:08",

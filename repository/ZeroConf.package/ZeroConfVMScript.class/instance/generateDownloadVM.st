@@ -9,7 +9,7 @@ echoerr "Downloading the latest ${VM_TYPE}VM:"
 echoerr "	$VM_URL"
 
 mkdir $VM_DIR
-wget --quiet --output-document=$VM_DIR/vm.zip $VM_URL
+$DOWNLOAD_TO$VM_DIR/vm.zip $VM_URL
 
 unzip -q -d $VM_DIR $VM_DIR/vm.zip
 rm -rf $VM_DIR/vm.zip
