@@ -11,7 +11,7 @@ generateIndexScript
 			self scripts 
 				do: [ :script| 
 					s << '<tr>';
-						<< '<td><code><a href="'; << script basename; << '">'; << script formattedUrl; << '</a></code></td>';
+						<< '<td><code><a href="'; print: script url; << '">'; << script formattedUrl; << '</a></code></td>';
 						<< '<td>'; << script description; << '</td>';
 						<< '<tr>' ]
 				separatedBy: [ s cr ].

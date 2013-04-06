@@ -4,9 +4,9 @@ generateHtmlHelpBody
 		<< '<h1>'; << self htmlTitle; << '</h1>'; cr;
 		<< '<p>'; << self htmlDescription; << '</p>'; cr;		
 		<< '<h2>Usage</h2>'; cr;
-		generateHtmlDownloadUsing: 'wget -O- '; << '<br/>'; cr;
-		<< 'or if <code>wget</code> is not available: </br>'; cr;
-		generateHtmlDownloadUsing: 'curl -L '; cr;
+		generateHtmlDownloadUsing: 'curl -L '; << '<br/>'; cr;
+		<< 'or if <code>curl</code> is not available: </br>'; cr;
+		generateHtmlDownloadUsing: 'wget -O- '; cr;
 		
 		<< '<h2>Artifacts</h2>'; cr;
 		generateHtmlArtifactDescription; cr;
