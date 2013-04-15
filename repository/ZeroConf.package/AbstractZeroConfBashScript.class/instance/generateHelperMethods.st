@@ -10,7 +10,7 @@ generateHelperMethods
 elif [[ `which wget` ]]; then
 	DOWNLOAD_TO="wget --quiet --output-document=";
 	DOWNLOAD="$DOWNLOAD_TO-";
-else;
+else
 	echo "Please install curl or wget on your machine";
 	exit 1
 fi'; cr; cr
