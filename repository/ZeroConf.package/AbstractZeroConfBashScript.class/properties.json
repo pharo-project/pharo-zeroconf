@@ -6,6 +6,7 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
+		"directory",
 		"baseUrl",
 		"fileBaseUrl",
 		"basename",

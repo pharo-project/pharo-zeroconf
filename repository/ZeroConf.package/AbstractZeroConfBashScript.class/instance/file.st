@@ -1,3 +1,3 @@
 accessing
 file
-	^ self basename asFileReference
+	^ self directory / self basename

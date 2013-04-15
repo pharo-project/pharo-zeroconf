@@ -1,10 +1,4 @@
 accessing
 numericImageScripts
-	"manually mark a stable and an unstable alpha release"
-	^ { 
-		ZeroConfPharoImageScript pharo20
-			basename: 'stable';
-			yourself.
-		ZeroConfPharoImageScript pharo30
-			basename: 'alpha';
-			yourself. }
+	^ self imageVersions collect: [ :version|
+		ZeroConfPharoImageScript pharo: version ]
