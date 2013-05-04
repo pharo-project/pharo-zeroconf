@@ -4,7 +4,7 @@ generateHelperMethods
 		<< '# define an echo that only outputs to stderr'; cr;
 		<< 'echoerr() { echo "$@" 1>&2; }'; cr;
 		<< '#  try to use curl if possible'; cr;
-		<< 'if [[ `which curl` ]]; then
+		<< 'if [[ `which curl &> /dev/null` ]]; then
 	DOWNLOAD="curl --silent --location --compressed ";
 	DOWNLOAD_TO="$DOWNLOAD --output ";
 elif [[ `which wget` ]]; then
