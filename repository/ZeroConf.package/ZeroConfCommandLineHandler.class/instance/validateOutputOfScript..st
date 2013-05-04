@@ -1,10 +1,10 @@
 actions testing
-testValidateOutputOfScript: aScript
+validateOutputOfScript: aScript
 	| generatedArtifacts expectedArtifacts |
 	
 	self waitForScript: aScript.
 	
-	expectedArtifacts := aScript artifacts sorted.
+	expectedArtifacts := ({ aScript basename }, aScript artifacts) sorted.
 	generatedArtifacts := self testDirectory childNames sort.
 	
 	generatedArtifacts

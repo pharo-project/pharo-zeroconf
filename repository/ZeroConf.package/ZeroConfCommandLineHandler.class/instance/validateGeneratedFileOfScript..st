@@ -1,5 +1,5 @@
 actions testing
-testValidateGeneratedFileOfScript: aScript
+validateGeneratedFileOfScript: aScript
 	aScript file isFile
 		ifFalse: [ 
 			self exitFailure: aScript file fullName, ' was not exported' ].

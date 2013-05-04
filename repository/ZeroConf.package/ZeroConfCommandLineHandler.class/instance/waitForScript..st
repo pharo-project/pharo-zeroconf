@@ -1,17 +1,19 @@
 actions testing
 waitForScript: aScript
-	| OSProcess process relayOutput |
+	| OSProcess process redirect |
+	
 	OSProcess := Smalltalk globals at: #PipeableOSProcess.
 	process := OSProcess 
-		command: 'bash ', aScript basename.
+		command: 'bash ', aScript basename
+		environment: nil
+		workingDir: self testDirectory fullName
+		input: nil
+		output: nil
+		error: nil
+		errorPipelineStream: nil.
 	
-	relayOutput := [[ 
-		process pipeFromError ifNotNil: [ :pipe | 
-			[ self stderr nextPutAll: (pipe next: 16); flush ] 
-				on:Error do: [ :err | "nothing" ]]
-		] repeat ] fork.
+	self printRunMessageForScript: aScript.
 	
-	[ 10 milliSeconds wait.  
-	process isComplete ] whileFalse.
-
-	relayOutput terminate.
+	redirect := self redirectOutputOfProcess: process.	"nothing"
+	[ self waitForScript: aScript inProcess: process ]
+		ensure: [ redirect terminate ]
