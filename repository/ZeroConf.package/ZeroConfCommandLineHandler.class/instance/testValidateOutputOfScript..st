@@ -1,0 +1,17 @@
+actions testing
+testValidateOutputOfScript: aScript
+	| generatedArtifacts expectedArtifacts |
+	
+	self waitForScript: aScript.
+	
+	expectedArtifacts := aScript artifacts sorted.
+	generatedArtifacts := self testDirectory childNames sort.
+	
+	generatedArtifacts
+		ifEmpty: [ ^ self exitFailure: aScript file fullName, ' did not generate any content' ].
+	
+	generatedArtifacts = expectedArtifacts
+		ifFalse: [  ^ self exitFailure: aScript file fullName, ' did not generate ', (expectedArtifacts \ generatedArtifacts) asString ].
+	
+	
+	

@@ -1,5 +1,5 @@
-actions
-generateIndexScript
+accessing
+indexScript
 	"the index.html is a special script that downloads the current stable release of Pharo with the VM.
 	Additionally it has a complete list of exported scripts in the html help"
 	| indexScript |
@@ -20,4 +20,4 @@ generateIndexScript
 	indexScript 
 		basename: 'index.html';
 		url: indexScript baseUrl.
-	self generate: indexScript.
+	^ indexScript.

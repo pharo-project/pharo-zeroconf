@@ -1,8 +1,7 @@
-actions
+actions generating
 generateScripts
-	self outputDir ensureDirectory.
 	
 	self scripts do: [ :script |
 		self generate: script ].
 	
-	self generateIndexScript.
+	self generate: self indexScript.
