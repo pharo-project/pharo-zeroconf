@@ -7,7 +7,7 @@ generateHelperMethods
 		<< 'if [[ `which curl &> /dev/null` ]]; then
 	DOWNLOAD="curl --silent --location --compressed ";
 	DOWNLOAD_TO="$DOWNLOAD --output ";
-elif [[ `which wget` ]]; then
+elif [[ `which wget &> /dev/null` ]]; then
 	DOWNLOAD_TO="wget --quiet --output-document=";
 	DOWNLOAD="$DOWNLOAD_TO-";
 else

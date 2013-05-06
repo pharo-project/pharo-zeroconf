@@ -1,7 +1,7 @@
 script generation
 generatePlatformTest
 	self << 'TMP_OS=`uname | tr "[:upper:]" "[:lower:]"`
-if [[ "{$TMP_OS}" = *windows* ]]; then
+if [[ "{$TMP_OS}" = *win* ]]; then
     OS="win";
 elif [[ "{$TMP_OS}" = *mingw* ]]; then
     OS="win";
