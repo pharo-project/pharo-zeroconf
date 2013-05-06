@@ -5,8 +5,8 @@ baseline10: spec
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
 		
-		self commandShell: spec.
-		
 		spec repository: 'http://smalltalkhub.com/mc/Pharo/ZeroConf/main/'.
 		spec package: 'ZeroConf'.
+		
+		self commandShell: spec.
 	].
