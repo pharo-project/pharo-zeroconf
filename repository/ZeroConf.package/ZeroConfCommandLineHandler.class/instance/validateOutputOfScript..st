@@ -12,7 +12,11 @@ validateOutputOfScript: aScript
 		ifEmpty: [ ^ self exitFailure: aScript file fullName, ' did not generate any content' ].
 	
 	generatedArtifacts = expectedArtifacts
-		ifFalse: [  ^ self exitFailure: aScript file fullName, ' did not generate ', (expectedArtifacts \ generatedArtifacts) asString ].
+		ifFalse: [  ^ self exitFailure: (String streamContents: [ :stream | 
+			stream << aScript file fullName;
+				<< 'did not generate the approriate files:'; lf;
+				<< '    missing:   '; print: (expectedArtifacts \ generatedArtifacts);
+				<< '    additiona: '; print: (generatedArtifacts \ expectedArtifacts)])].
 	
 	
 	

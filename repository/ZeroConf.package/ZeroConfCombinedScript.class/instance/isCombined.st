@@ -1,0 +1,3 @@
+testing
+isCombined
+	^ true
