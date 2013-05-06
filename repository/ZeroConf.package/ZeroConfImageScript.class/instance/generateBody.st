@@ -9,7 +9,7 @@ echoerr "    $IMAGE_URL"
 TMP_DIR=`mktemp -d image.XXXXX`
 $DOWNLOAD_TO$TMP_DIR/image.zip $IMAGE_URL
 
-unzip -q -d $TMP_DIR $TMP_DIR/image.zip
+unzip -q $TMP_DIR/image.zip -d $TMP_DIR
 rm -rf image image.zip
 
 PHARO_IMAGE=`find $TMP_DIR -name \*.image`
