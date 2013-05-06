@@ -1,7 +1,9 @@
 actions testing
 test: aScript	
-	self 
-		generate: aScript in: self testDirectory;
-		validateGeneratedFileOfScript: aScript;
-		validateOutputOfScript: aScript;
-		cleanUpAfterScript: aScript.
+	self printTestStartOfScript: aScript.
+	
+	aScript directory: self testDirectory.
+		
+	[ aScript validate ] 
+		ensure: [ self cleanUpAfterScript: aScript ]
+	

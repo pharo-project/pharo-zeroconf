@@ -1,0 +1,3 @@
+validation
+validateGenerate
+	^ self generate

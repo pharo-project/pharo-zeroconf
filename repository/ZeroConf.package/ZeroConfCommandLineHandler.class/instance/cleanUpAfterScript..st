@@ -1,3 +1,3 @@
 actions testing
 cleanUpAfterScript: aScript
-	self testDirectory deleteAll
+	self testDirectory deleteAllChildren

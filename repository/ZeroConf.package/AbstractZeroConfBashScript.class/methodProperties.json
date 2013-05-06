@@ -59,6 +59,15 @@
 		"nextPutAll:" : "CamilloBruni 4/6/2013 18:34",
 		"openOutputStream" : "CamilloBruni 3/30/2013 13:16",
 		"print:" : "CamilloBruni 3/29/2013 18:17",
+		"redirectOutputOfProcess:" : "CamilloBruni 5/6/2013 17:26",
+		"run" : "CamilloBruni 5/6/2013 17:24",
 		"store:" : "CamilloBruni 3/29/2013 18:17",
 		"url" : "CamilloBruni 4/6/2013 18:29",
-		"url:" : "CamilloBruni 4/6/2013 18:29" } }
+		"url:" : "CamilloBruni 4/6/2013 18:29",
+		"validate" : "CamilloBruni 5/6/2013 17:29",
+		"validateGenerate" : "CamilloBruni 5/6/2013 17:29",
+		"validateGeneratedArtifacts" : "CamilloBruni 5/6/2013 17:41",
+		"validateRun" : "CamilloBruni 5/6/2013 17:41",
+		"validateScript" : "CamilloBruni 5/6/2013 17:28",
+		"validationTimeout" : "CamilloBruni 5/6/2013 17:30",
+		"waitForRunProcess:" : "CamilloBruni 5/6/2013 17:23" } }
