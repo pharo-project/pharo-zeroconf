@@ -5,6 +5,7 @@ validateOutputOfScript: aScript
 	self waitForScript: aScript.
 	
 	expectedArtifacts := ({ aScript basename }, aScript artifacts) sorted.
+	expectedArtifacts := expectedArtifacts collect: [ :artifactName | artifactName asFileReference basename ].
 	generatedArtifacts := self testDirectory childNames sort.
 	
 	generatedArtifacts
