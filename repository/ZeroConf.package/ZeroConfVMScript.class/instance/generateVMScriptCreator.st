@@ -37,7 +37,5 @@ set -f
 }
 
 echoerr "Creating starter scripts pharo and pharo-ui"
-create_vm_script "vm.sh"
-create_vm_script "vm-ui.sh"
 create_vm_script "pharo"
 create_vm_script "pharo-ui"'; cr
