@@ -4,6 +4,11 @@ validateOutputOfScript: aScript
 	
 	self waitForScript: aScript.
 	
+	
+	"cannot test combined scripts as they download the other scripts from the server	which most probably are still using the old data. Hence they might produce outdated	artifacts."
+	aScript isCombined
+		ifTrue: [ ^ self ].
+					
 	expectedArtifacts := ({ aScript basename }, aScript artifacts) sorted.
 	expectedArtifacts := expectedArtifacts collect: [ :artifactName | artifactName asFileReference basename ].
 	generatedArtifacts := self testDirectory childNames sort.
