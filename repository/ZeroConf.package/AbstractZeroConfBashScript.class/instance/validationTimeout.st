@@ -1,3 +1,3 @@
 validation
 validationTimeout
-	^ 30 seconds
+	^ 1 minute
