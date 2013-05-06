@@ -4,5 +4,5 @@ version10: spec
 
 	spec for: #'common' do: [		
 		spec
-			package: 'ZeroConf' with: 'ZeroConf-CamilloBruni.13'
+			package: 'ZeroConf' with: 'ZeroConf-CamilloBruni.15'
 	].
