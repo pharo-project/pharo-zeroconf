@@ -1,5 +1,7 @@
 actions testing
 testScripts
+	self flag: 'Überhack to get the damn Delays working on startup'.
+	Delay startTimerEventLoop.
 	
 	self 
 		ensureOSProcess;
