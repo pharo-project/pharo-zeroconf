@@ -1,3 +1,3 @@
 accessing
 description
-	^ 'This script downloads the latest ', self type capitalized, ' VM.'
+	^ 'This script downloads the ', self release, ' ', self type capitalized, ' VM.'

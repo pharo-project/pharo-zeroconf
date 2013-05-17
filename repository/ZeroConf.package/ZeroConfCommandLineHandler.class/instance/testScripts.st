@@ -4,7 +4,6 @@ testScripts
 	Delay startTimerEventLoop.
 	
 	self 
-		ensureOSProcess;
 		ensureEmptyTestDirectory.
 	
 	self scripts do: [ :script |
