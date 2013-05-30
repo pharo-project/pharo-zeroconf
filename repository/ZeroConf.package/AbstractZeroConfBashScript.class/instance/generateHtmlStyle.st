@@ -3,12 +3,16 @@ generateHtmlStyle
 	self << '
 	BODY, TABLE { 
 		font-family: Arial;
+		line-height: 1.5em;
 	}
-	CODE { 
-		background-color: #DDD;
-		padding: 0.5em 0.8em;
-		border-radius: 0.5em;
-		line-height: 2.5em;
+	TD { 
+		vertical-align: top;
+		padding: 0 1ex 0 0;
+	}
+	PRE, CODE { 
+		background-color: #EEE;
+		padding: 0.5ex 0.8ex;
+		border-radius: 0.5ex;
 	}
 	A { 
 		color: black;
