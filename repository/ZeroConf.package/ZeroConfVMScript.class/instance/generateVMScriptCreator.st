@@ -23,7 +23,7 @@ set -f
 	if [[ "{$VM_SCRIPT}" != *ui* ]]; then
 		# output the headless option, which varies under each platform
 		if [ "$OS" == "linux" ]; then
-		    echo -n " '<< self optionDash << 'vm-display-null " >> $VM_SCRIPT
+		    echo -n " '<< self optionDash << 'nodisplay " >> $VM_SCRIPT
 		else
 		    echo -n " '<< self optionDash << 'headless" >> $VM_SCRIPT
 		fi
