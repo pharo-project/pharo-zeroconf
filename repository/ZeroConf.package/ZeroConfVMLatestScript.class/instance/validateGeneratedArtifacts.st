@@ -1,7 +1,9 @@
 validation
 validateGeneratedArtifacts
+	| command |
 	super validateGeneratedArtifacts.
 	
+	command := (self directory / self type) fullName, ' ',self optionDash,'help'.
 	self 
-		assert: (OSProcess waitForCommand: './',self type, ' ',self optionDash,'help') succeeded
-		description: self type, ' ',self optionDash,'help did not run properly.' 
+		assert: (OSProcess waitForCommand: command) succeeded
+		description: command, ' did not run properly.' 
