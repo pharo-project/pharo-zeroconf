@@ -1,7 +1,7 @@
 script generation
-generateVMScriptCreator
+generateVmScriptCreator
 	self 
-		<<== 'CREATE THE VM LAUNCHER SCRIPTS';
+		<<== 'CREATE THE VM LAUNCHER SCRIPTS'
 		<< 'create_vm_script() {
 	VM_SCRIPT=$1
 	
@@ -23,9 +23,9 @@ set -f
 	if [[ "{$VM_SCRIPT}" != *ui* ]]; then
 		# output the headless option, which varies under each platform
 		if [ "$OS" == "linux" ]; then
-		    echo -n " -vm-display-null " >> $VM_SCRIPT
+		    echo -n " '<< self optionDash << 'vm-display-null " >> $VM_SCRIPT
 		else
-		    echo -n " -headless" >> $VM_SCRIPT
+		    echo -n " '<< self optionDash << 'headless" >> $VM_SCRIPT
 		fi
 	fi
 	

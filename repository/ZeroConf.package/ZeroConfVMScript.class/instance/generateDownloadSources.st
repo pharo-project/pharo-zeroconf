@@ -8,7 +8,7 @@ else
 	SOURCES_DIR=`dirname $PHARO_VM`;
 fi
 
-SOURCES_URL="http://files.pharo.org/image/"
+SOURCES_URL="http://files.pharo.org/sources/"
 
 download_sources() {
 	echoerr "Downloading $1.sources:"

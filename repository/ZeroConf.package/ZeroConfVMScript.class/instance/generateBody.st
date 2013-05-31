@@ -3,7 +3,7 @@ generateBody
 	self
 		generateVmProperties; cr; cr;
 		generateDetectSystemProperties; cr; cr;
-		generateDownloadVM; cr; cr;
+		generateDownloadVm; cr; cr;
 		generateDownloadSources; cr; cr;
-		generateVMScriptCreator; cr; cr;
+		generateVmScriptCreator; cr; cr;
 		generateLinuxScriptTest

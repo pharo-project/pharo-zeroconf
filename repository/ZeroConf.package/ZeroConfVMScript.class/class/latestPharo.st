@@ -1,5 +1,4 @@
 instance creation
 latestPharo
-	^ self pharo
-		release: 'latest';
+	^ ZeroConfVMLatestScript pharo
 		yourself

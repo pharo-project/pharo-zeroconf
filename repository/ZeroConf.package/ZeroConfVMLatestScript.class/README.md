@@ -1,0 +1,1 @@
+Temporary script to overcome the migration form single dash "-help" options to double dash "--help" options in the pharo vm.
