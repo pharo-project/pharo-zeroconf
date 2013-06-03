@@ -5,5 +5,5 @@ version10: spec
 	spec for: #'common' do: [		
 		spec
 			project: 'CommandShell' with: '1.1';
-			package: 'ZeroConf' with: 'ZeroConf-CamilloBruni.34'
+			package: 'ZeroConf' with: 'ZeroConf-AndreiChis.35'
 	].
