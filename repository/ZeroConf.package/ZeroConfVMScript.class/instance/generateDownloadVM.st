@@ -2,7 +2,7 @@ script generation
 generateDownloadVm
 	self 
 		<<== ('DOWNLOAD THE LATEST ', self type asUppercase, ' VM')
-		<< 'VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-' << self release << '.zip"
+		<< 'VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/' << self release << '.zip"
 VM_DIR="' << self vmDirectoryPathString << '"
 
 echoerr "Downloading the latest ${VM_TYPE}VM:"
