@@ -5,6 +5,10 @@ generateHtmlStyle
 		font-family: Arial;
 		line-height: 1.5em;
 	}
+	BODY { 
+		background-color: white;
+		margin-top: -1.5em;
+	}
 	TD { 
 		vertical-align: top;
 		padding: 0 1ex 0 0;
