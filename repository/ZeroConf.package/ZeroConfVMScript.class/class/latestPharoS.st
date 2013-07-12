@@ -1,5 +1,5 @@
 instance creation
 latestPharoS
-	^ ZeroConfVMLatestScript
+	^ ZeroConfVMLatestScript pharoS
 		basename: 'vmSLatest';
 		yourself
