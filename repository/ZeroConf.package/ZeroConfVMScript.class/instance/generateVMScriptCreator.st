@@ -2,7 +2,7 @@ script generation
 generateVmScriptCreator
 	self 
 		<<== 'CREATE THE VM LAUNCHER SCRIPTS'
-		<< 'create_vm_script() {
+		<< ('create_vm_script() \{
 	VM_SCRIPT=$1
 	
 	echo "#!/bin/bash" > $VM_SCRIPT
@@ -20,12 +20,12 @@ set -f
 	echo -n \"\$DIR\"/\"$PHARO_VM\" >> $VM_SCRIPT
 	
 	# only output the headless option if the VM_SCRIPT name does not include "ui"
-	if [[ "{$VM_SCRIPT}" != *ui* ]]; then
+	if [[ "\{$VM_SCRIPT}" != *ui* ]]; then
 		# output the headless option, which varies under each platform
 		if [ "$OS" == "linux" ]; then
-		    echo -n " '<< self optionDash << 'nodisplay " >> $VM_SCRIPT
+		    echo -n " {1}nodisplay " >> $VM_SCRIPT
 		else
-		    echo -n " '<< self optionDash << 'headless" >> $VM_SCRIPT
+		    echo -n " {1}headless" >> $VM_SCRIPT
 		fi
 	fi
 	
@@ -36,6 +36,6 @@ set -f
 	chmod +x $VM_SCRIPT
 }
 
-echoerr "Creating starter scripts pharo and pharo-ui"
-create_vm_script "pharo"
-create_vm_script "pharo-ui"'; cr
+echoerr "Creating starter scripts {2} and {2}-ui"
+create_vm_script "{2}"
+create_vm_script "{2}-ui"' format: {self optionDash. self type}); cr

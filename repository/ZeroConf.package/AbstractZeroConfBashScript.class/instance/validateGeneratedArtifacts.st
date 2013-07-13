@@ -12,6 +12,6 @@ validateGeneratedArtifacts
 	generatedArtifacts = expectedArtifacts
 		ifFalse: [  ^ self exitFailure: (String streamContents: [ :stream | 
 			stream << self file fullName;
-				<< 'did not generate the approriate files:'; lf;
+				<< ' did not generate the approriate files:'; lf;
 				<< '    missing:   '; print: (expectedArtifacts \ generatedArtifacts);
 				<< '    additional: '; print: (generatedArtifacts \ expectedArtifacts) ])].
