@@ -6,5 +6,5 @@ version10: spec
 		"Common Authors: AndreiChis CamilloBruni EstebanLorenzano"
 		spec
 			project: 'CommandShell' with: '1.1';
-			package: 'ZeroConf' with: 'ZeroConf-EstebanLorenzano.42'
+			package: 'ZeroConf' with: 'ZeroConf-CamilloBruni.43'
 	].
