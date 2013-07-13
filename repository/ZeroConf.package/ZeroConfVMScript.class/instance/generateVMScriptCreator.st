@@ -17,7 +17,7 @@ set -f
 # run the VM and pass along all arguments as is'' >> $VM_SCRIPT
 	
 	# make sure we only substite $PHARO_VM but put "$DIR" in the script
-	echo -n \"\$DIR\"/\"$PHARO_VM\" >> $VM_SCRIPT
+	echo -n \\"\\$DIR\\"/\\"$PHARO_VM\\" >> $VM_SCRIPT
 	
 	# only output the headless option if the VM_SCRIPT name does not include "ui"
 	if [[ "\{$VM_SCRIPT}" != *ui* ]]; then
@@ -30,7 +30,7 @@ set -f
 	fi
 	
 	# forward all arguments unprocessed using $@
-	echo " \"\$@\"" >> $VM_SCRIPT
+	echo " \\"\\$@\\"" >> $VM_SCRIPT
 	
 	# make the script executable
 	chmod +x $VM_SCRIPT
