@@ -1,5 +1,8 @@
 actions testing
-testScripts	
+testScripts
+	self flag: 'Überhack to get the damn Delays working on startup'.
+	Delay startTimerEventLoop.
+	
 	self 
 		ensureEmptyTestDirectory.
 	
