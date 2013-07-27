@@ -14,7 +14,7 @@
 		"generateBody" : "CamilloBruni 5/31/2013 22:44",
 		"generateDetectSystemProperties" : "CamilloBruni 3/30/2013 11:06",
 		"generateDownloadSources" : "CamilloBruni 5/31/2013 22:42",
-		"generateDownloadVm" : "CamilloBruni 6/7/2013 16:54",
+		"generateDownloadVm" : "GuillermoPolito 7/27/2013 17:42",
 		"generateLinuxScriptTest" : "CamilloBruni 6/7/2013 17:06",
 		"generateVmProperties" : "CamilloBruni 4/1/2013 22:36",
 		"generateVmScriptCreator" : "CamilloBruni 7/13/2013 14:37",
@@ -27,4 +27,5 @@
 		"vmDirectory" : "CamilloBruni 4/6/2013 18:11",
 		"vmDirectory:" : "CamilloBruni 3/30/2013 14:37",
 		"vmDirectoryPathString" : "CamilloBruni 4/1/2013 22:29",
-		"vmFolderName" : "CamilloBruni 4/6/2013 18:16" } }
+		"vmFolderName" : "CamilloBruni 4/6/2013 18:16",
+		"vmUrl" : "GuillermoPolito 7/27/2013 17:42" } }
