@@ -4,6 +4,6 @@ generate: script in: aDirectory
 	
 	self stdout nextPutAll: script basename; lf.
 	script 
-		ensureDeleted;
+		ensureDelete;
 		directory: aDirectory;
 		generate.

@@ -1,3 +1,3 @@
 file creation
 ensureDeleted
-	self file ensureDeleted
+	self file ensureDelete
