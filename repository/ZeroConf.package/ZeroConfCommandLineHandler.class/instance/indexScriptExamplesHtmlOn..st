@@ -1,9 +1,7 @@
 accessing
-indexScriptExamplesHtml
-	^ (String streamContents: [ :s |
-			s 
-				<< '<h2>Pharo Example</h2>'; cr;
-				<< '<table>
+indexScriptExamplesHtmlOn: s 
+	s << '<h2>Pharo Example</h2>'; cr;
+	<< '<table>
 
 <tr>
 <td>Show the command line help:</td>
@@ -28,4 +26,4 @@ indexScriptExamplesHtml
           ConfigurationOfZeroconf \
           --install=development</pre>
 </tr>
-</table>' ] ).
+</table>'.

@@ -4,8 +4,7 @@ formattedUrl
 	| pathString |
 	^ String streamContents: [ :s|
 		self url printAuthorityOn: s.
-		"hack to make the $+ appear in the url string".
-		pathString := self url pathPrintString urlDecoded.
+		pathString := self url pathPrintString.
 		"do not print a single /"
 		pathString = '/'
 			ifFalse: [ s << pathString ]]

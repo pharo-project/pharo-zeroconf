@@ -1,5 +1,5 @@
 instance creation
 pharo20Vm
 	^ self
-		with: ZeroConfImageScript pharo20
+		with: ZeroConfPharoImageScript pharo20
 		with: ZeroConfVMScript pharo

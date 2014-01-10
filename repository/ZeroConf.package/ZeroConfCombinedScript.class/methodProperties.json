@@ -1,10 +1,10 @@
 {
 	"class" : {
-		"pharo14Vm" : "CamilloBruni 3/30/2013 14:55",
-		"pharo20LatestVM" : "CamilloBruni 3/30/2013 14:55",
-		"pharo20Vm" : "CamilloBruni 3/30/2013 14:54",
-		"pharo30LatestVM" : "CamilloBruni 3/30/2013 14:54",
-		"pharo30Vm" : "CamilloBruni 3/30/2013 14:54",
+		"pharo14Vm" : "CamilloBruni 1/10/2014 15:48",
+		"pharo20LatestVM" : "CamilloBruni 1/10/2014 15:48",
+		"pharo20Vm" : "CamilloBruni 1/10/2014 15:48",
+		"pharo30LatestVM" : "CamilloBruni 1/10/2014 15:48",
+		"pharo30Vm" : "CamilloBruni 1/10/2014 15:48",
 		"with:" : "CamilloBruni 3/30/2013 14:58",
 		"with:with:" : "CamilloBruni 3/30/2013 14:58" },
 	"instance" : {

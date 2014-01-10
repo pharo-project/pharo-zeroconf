@@ -5,9 +5,8 @@ indexScript
 	| indexScript |
 	indexScript := self defaultScript. 
 	indexScript additionalHtmlHelp: (String streamContents: [ :s |
-			s 
-				<< self indexScriptExamplesHtml 
-				<< self otherScriptsHtml ] ).
+			self indexScriptExamplesHtmlOn: s.
+			self otherScriptsHtmlOn: s ] ).
 	indexScript 
 		basename: 'index.html';
 		url: indexScript baseUrl.
