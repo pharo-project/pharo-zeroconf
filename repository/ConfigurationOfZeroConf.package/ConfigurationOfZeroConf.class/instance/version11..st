@@ -7,5 +7,5 @@ version11: spec
 		spec
 			description: 'Use double dash arguments by default';
 			project: 'CommandShell' with: '1.1';
-			package: 'ZeroConf'     with: 'ZeroConf-CamilloBruni.54'
+			package: 'ZeroConf'     with: 'ZeroConf-CamilloBruni.55'
 	].
