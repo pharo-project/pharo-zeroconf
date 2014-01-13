@@ -1,3 +1,3 @@
 file creation
-ensureDeleted
+ensureDelete
 	self file ensureDelete
