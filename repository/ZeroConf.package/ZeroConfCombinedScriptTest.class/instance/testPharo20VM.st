@@ -1,3 +1,3 @@
 tests
 testPharo20VM
-	self runCombinedScript: #pharo20vm
+	self runCombinedScriptTest: #pharo20vm

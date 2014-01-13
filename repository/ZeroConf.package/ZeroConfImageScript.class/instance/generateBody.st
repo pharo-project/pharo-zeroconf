@@ -6,7 +6,7 @@ generateBody
 		<< 'echoerr "Downloading the latest '; << self release; << ' Image:"
 echoerr "    $IMAGE_URL"
 
-TMP_DIR=`mktemp -d image.XXXXX`
+TMP_DIR=`mktemp -d image.XXXXXX`
 $DOWNLOAD_TO$TMP_DIR/image.zip $IMAGE_URL
 
 unzip -q $TMP_DIR/image.zip -d $TMP_DIR

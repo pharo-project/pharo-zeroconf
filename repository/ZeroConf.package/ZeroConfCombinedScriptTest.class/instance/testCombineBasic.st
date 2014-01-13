@@ -1,10 +1,12 @@
 tests
 testCombineBasic
 	| image vm combined |
-	image := ZeroConfImageScript pharo30.
+	image := ZeroConfPharoImageScript pharo30.
 	vm := ZeroConfVMScript pharo.
 	combined := image , vm.
 	
 	self assert: combined basename equals: (image basename, '+', vm basename).
 	self assert: combined scripts asArray equals: {image. vm}.
-	self assert: combined artifacts size equals: image artifacts size + vm artifacts size
+	self 
+		assert: combined artifacts size
+		equals: image artifacts size + vm artifacts size

@@ -1,3 +1,3 @@
 helper
-runImageScriptTest: methodName
+runCombinedScriptTest: methodName
 	self runScriptTest: (ZeroConfCombinedScriptTest perform: methodName)

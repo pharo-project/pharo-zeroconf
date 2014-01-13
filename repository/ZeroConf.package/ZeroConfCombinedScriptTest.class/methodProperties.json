@@ -2,8 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"runImageScriptTest:" : "CamilloBruni 3/30/2013 13:56",
-		"testCombineBasic" : "CamilloBruni 3/30/2013 15:03",
-		"testCombineFailSameArtifacts" : "CamilloBruni 3/30/2013 15:02",
-		"testPharo20VM" : "CamilloBruni 3/30/2013 13:55",
-		"testPharo30VM" : "CamilloBruni 3/30/2013 13:55" } }
+		"runCombinedScriptTest:" : "CamilloBruni 1/13/2014 14:56",
+		"testCombineBasic" : "CamilloBruni 1/13/2014 14:55",
+		"testCombineFailSameArtifacts" : "CamilloBruni 1/13/2014 14:55",
+		"testPharo20VM" : "CamilloBruni 1/13/2014 14:56",
+		"testPharo30VM" : "CamilloBruni 1/13/2014 14:56" } }

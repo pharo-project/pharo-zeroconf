@@ -1,6 +1,6 @@
 tests
 testCombineFailSameArtifacts
 	| image |
-	image := ZeroConfImageScript pharo30.
+	image := ZeroConfPharoImageScript pharo30.
 	
 	self should: [ (image, image) artifactDescription ] raise: Error.
