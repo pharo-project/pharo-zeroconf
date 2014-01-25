@@ -5,5 +5,5 @@ validateRun
 		onTimeout: [ 
 			AssertionFailure signal: (String streamContents: [ :stream|
 				stream 
-					<< 'Timout: '; print: self  file; 
+					<< 'Timeout: '; print: self  file; 
 					<< ' took longer than '; print: self validationTimeout; << ' to finish' ])]

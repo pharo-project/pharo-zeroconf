@@ -1,4 +1,6 @@
 helper testing
 helpTest
 	"Test if the generate ZeroConf script successfully runs with --help"
-	self flag: #todo.
+	| result |
+	result := OSProcess waitForCommand: 'bash ', script file fullName, ' --help'.
+	self assert: result succeeded.
