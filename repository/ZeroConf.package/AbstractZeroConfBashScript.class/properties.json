@@ -14,7 +14,8 @@
 		"combiningScript",
 		"additionalHelp",
 		"additionalHtmlHelp",
-		"url" ],
+		"url",
+		"prefixingScript" ],
 	"name" : "AbstractZeroConfBashScript",
 	"pools" : [
 		 ],

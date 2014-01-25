@@ -1,3 +1,3 @@
 helper
 runImageScriptTest: methodName
-	self runScriptTest: (ZeroConfImageScript perform: methodName)
+	self runScriptTest: (self classToBeTested perform: methodName)

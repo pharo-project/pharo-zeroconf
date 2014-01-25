@@ -4,11 +4,11 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "<historical>",
+	"commentStamp" : "",
 	"instvars" : [
-		"script" ],
-	"name" : "AbstractZeroConfBashScriptTest",
+		 ],
+	"name" : "ZeroConfPharoImageScriptTest",
 	"pools" : [
 		 ],
-	"super" : "ClassTestCase",
+	"super" : "ZeroConfImageScriptTest",
 	"type" : "normal" }

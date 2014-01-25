@@ -2,10 +2,5 @@
 	"class" : {
 		 },
 	"instance" : {
-		"runImageScriptTest:" : "CamilloBruni 3/30/2013 13:12",
-		"testPharo11" : "CamilloBruni 3/30/2013 13:07",
-		"testPharo12" : "CamilloBruni 3/30/2013 13:07",
-		"testPharo13" : "CamilloBruni 3/30/2013 13:07",
-		"testPharo14" : "CamilloBruni 3/30/2013 13:07",
-		"testPharo20" : "CamilloBruni 3/30/2013 13:07",
-		"testPharo30" : "CamilloBruni 3/30/2013 13:07" } }
+		"classToBeTested" : "CamilloBruni 1/25/2014 16:13",
+		"runImageScriptTest:" : "CamilloBruni 1/25/2014 16:29" } }

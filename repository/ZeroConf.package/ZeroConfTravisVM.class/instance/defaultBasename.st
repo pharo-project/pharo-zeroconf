@@ -1,3 +1,3 @@
 accessing
 defaultBasename
-	^ 'travisVM'
+	^ 'travis'

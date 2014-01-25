@@ -1,3 +1,3 @@
 helper
 runCombinedScriptTest: methodName
-	self runScriptTest: (ZeroConfCombinedScriptTest perform: methodName)
+	self runScriptTest: (ZeroConfCombinedScript perform: methodName)

@@ -2,8 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"runCombinedScriptTest:" : "CamilloBruni 1/13/2014 14:56",
+		"classToBeTested" : "CamilloBruni 1/25/2014 16:14",
+		"runCombinedScriptTest:" : "CamilloBruni 1/25/2014 16:31",
 		"testCombineBasic" : "CamilloBruni 1/13/2014 14:55",
 		"testCombineFailSameArtifacts" : "CamilloBruni 1/13/2014 14:55",
-		"testPharo20VM" : "CamilloBruni 1/13/2014 14:56",
-		"testPharo30VM" : "CamilloBruni 1/13/2014 14:56" } }
+		"testPharo20VM" : "CamilloBruni 1/25/2014 16:32",
+		"testPharo30VM" : "CamilloBruni 1/25/2014 16:32" } }
