@@ -1,4 +1,4 @@
-as yet unclassified
+accessing
 defaultDirectory
 	| fileReference |
 	fileReference := FileLocator workingDirectory.

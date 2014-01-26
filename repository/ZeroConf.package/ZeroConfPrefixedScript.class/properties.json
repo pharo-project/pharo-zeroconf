@@ -4,9 +4,10 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "CamilloBruni 1/25/2014 15:56",
+	"commentStamp" : "CamilloBruni 1/26/2014 15:11",
 	"instvars" : [
-		"prefixScripts" ],
+		"prefixScripts",
+		"inlinePrefixScripts" ],
 	"name" : "ZeroConfPrefixedScript",
 	"pools" : [
 		 ],
