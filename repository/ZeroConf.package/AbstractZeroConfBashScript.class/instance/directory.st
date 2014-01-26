@@ -1,3 +1,3 @@
 accessing
 directory
-	^ directory ifNil: [ FileLocator workingDirectory ]
+	^ directory ifNil: [ self defaultDirectory ]

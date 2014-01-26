@@ -1,3 +1,3 @@
 accessing
 description
-	^ 'This script install the requirements to run a pharo vm'
+	^ 'This script installs the dependencies to run a pharo vm on a travis slave'

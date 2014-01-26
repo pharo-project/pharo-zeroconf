@@ -1,3 +1,5 @@
 script generation
 generateDownloadFor: script
-	self << '$DOWNLOAD '; print: script url; << ' | bash '; cr.
+	self
+		<<-- script description; 
+		<< '$DOWNLOAD '; print: script url; << ' | bash '; cr.
