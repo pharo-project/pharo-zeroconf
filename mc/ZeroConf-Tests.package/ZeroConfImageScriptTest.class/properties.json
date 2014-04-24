@@ -1,5 +1,5 @@
 {
-	"category" : "ZeroConf",
+	"category" : "ZeroConf-Tests",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
@@ -7,7 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		 ],
-	"name" : "ZeroConfCombinedScriptTest",
+	"name" : "ZeroConfImageScriptTest",
 	"pools" : [
 		 ],
 	"super" : "AbstractZeroConfBashScriptTest",

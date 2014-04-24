@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfZeroConf",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfZeroConf",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
