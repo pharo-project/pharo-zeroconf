@@ -19,4 +19,5 @@ download_sources() {
 }
 
 download_sources PharoV10 
-download_sources PharoV20'; cr
+download_sources PharoV20
+download_sources PharoV30'; cr
