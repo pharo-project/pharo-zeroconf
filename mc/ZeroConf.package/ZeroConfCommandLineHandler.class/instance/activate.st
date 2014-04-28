@@ -3,7 +3,7 @@ activate
 	self activateHelp
 		ifTrue: [ ^ self ].
 	
-	self outputDirectory ensureDirectory.
+	self outputDirectory ensureCreateDirectory.
 	
 	(self hasOption: 'test')
 		ifTrue: [ self testScripts ]
