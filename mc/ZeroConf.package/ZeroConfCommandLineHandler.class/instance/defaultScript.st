@@ -1,3 +1,3 @@
 accessing
 defaultScript
-	^ ZeroConfPharoImageScript pharo20, ZeroConfVMScript pharo
+	^ ZeroConfPharoImageScript pharo30, ZeroConfVMScript pharo

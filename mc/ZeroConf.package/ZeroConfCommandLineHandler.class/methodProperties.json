@@ -2,12 +2,12 @@
 	"class" : {
 		"commandName" : "CamilloBruni 3/30/2013 09:27",
 		"description" : "CamilloBruni 3/30/2013 09:28",
-		"generate" : "CamilloBruni 1/25/2014 15:44" },
+		"generate" : "EstebanLorenzano 5/5/2014 12:37" },
 	"instance" : {
 		"activate" : "EstebanLorenzano 4/28/2014 14:32",
 		"cleanUpAfterScript:" : "CamilloBruni 5/6/2013 17:42",
 		"combinedScripts" : "CamilloBruni 1/25/2014 15:42",
-		"defaultScript" : "EstebanLorenzano 4/28/2014 14:05",
+		"defaultScript" : "EstebanLorenzano 5/5/2014 12:00",
 		"ensureEmptyTestDirectory" : "CamilloBruni 5/6/2013 17:41",
 		"generate:" : "EstebanLorenzano 4/28/2014 14:31",
 		"generateScripts" : "CamilloBruni 5/4/2013 23:28",
@@ -21,7 +21,7 @@
 		"printTestStartOfScript:" : "CamilloBruni 5/7/2013 08:39",
 		"scripts" : "CamilloBruni 1/25/2014 15:43",
 		"setScriptDirectory:" : "CamilloBruni 1/25/2014 15:42",
-		"symbolicImageScripts" : "EstebanLorenzano 4/28/2014 14:04",
+		"symbolicImageScripts" : "EstebanLorenzano 5/5/2014 11:59",
 		"test:" : "CamilloBruni 5/6/2013 17:47",
 		"testDirectory" : "CamilloBruni 5/4/2013 23:40",
 		"testScripts" : "CamilloBruni 7/13/2013 14:59",
