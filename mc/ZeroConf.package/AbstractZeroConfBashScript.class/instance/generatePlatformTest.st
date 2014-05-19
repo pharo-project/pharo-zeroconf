@@ -5,6 +5,7 @@ if [[ "{$TMP_OS}" = *darwin* ]]; then
     OS="mac";
 elif [[ "{$TMP_OS}" = *linux* ]]; then
     OS="linux";
+	 LIBC=""/`libc_version`""
 elif [[ "{$TMP_OS}" = *win* ]]; then
     OS="win";
 elif [[ "{$TMP_OS}" = *mingw* ]]; then
