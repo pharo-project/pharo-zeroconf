@@ -5,7 +5,7 @@ generateVmScriptCreator
 		<< ('create_vm_script() \{
 	VM_SCRIPT=$1
 	
-	echo "#!/bin/bash" > $VM_SCRIPT
+	echo "#!/usr/bin/env bash" > $VM_SCRIPT
 	echo ''# some magic to find out the real location of this script dealing with symlinks
 DIR=`readlink "$0"` || DIR="$0";
 DIR=`dirname "$DIR"`;
