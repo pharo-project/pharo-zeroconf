@@ -1,0 +1,1 @@
+I generate a downloader script in bash for a Pharo-minimal image for the given pharo release

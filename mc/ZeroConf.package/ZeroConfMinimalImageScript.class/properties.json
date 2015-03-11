@@ -1,0 +1,14 @@
+{
+	"category" : "ZeroConf",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "EstebanLorenzano 3/11/2015 13:19",
+	"instvars" : [
+		 ],
+	"name" : "ZeroConfMinimalImageScript",
+	"pools" : [
+		 ],
+	"super" : "ZeroConfImageScript",
+	"type" : "normal" }
