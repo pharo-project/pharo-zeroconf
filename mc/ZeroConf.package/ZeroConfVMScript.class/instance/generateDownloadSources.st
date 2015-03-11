@@ -18,6 +18,5 @@ download_sources() {
 	rm -rf $VM_DIR/sources.zip
 }
 
-download_sources PharoV10 
-download_sources PharoV20
-download_sources PharoV30'; cr
+download_sources PharoV30
+download_sources PharoV40'; cr
