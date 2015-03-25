@@ -2,9 +2,9 @@ accessing
 symbolicImageScripts
 	"manually mark a stable and an unstable alpha release"
 	^ { 
-		ZeroConfPharoImageScript pharo40
+		(ZeroConfImageVersionScript pharo: self class stableVersion)
 			basename: 'stable';
 			yourself.
-		ZeroConfPharoImageScript pharo50
+		(ZeroConfImageVersionScript pharo: self class alphaVersion)
 			basename: 'alpha';
 			yourself. }

@@ -1,8 +1,7 @@
 accessing
 defaultBasename
-	^ String streamContents: [ :stream | | scriptsWithBasename |
-		scriptsWithBasename := self scripts select: [ :each| 
-			each hasBasename ].
-		scriptsWithBasename
-			do: [ :script | stream nextPutAll: script basename ]
-			separatedBy: [ stream nextPut: $+ ]]
+	^ String streamContents: [ :stream | 
+		(self scripts 
+			select: #hasBasename)
+			do: [ :each | stream nextPutAll: (each basenameForCombinedIn: self) ]
+			separatedBy: [ stream nextPut: $+ ] ]

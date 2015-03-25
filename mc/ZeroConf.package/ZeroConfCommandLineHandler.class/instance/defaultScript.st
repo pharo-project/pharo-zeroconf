@@ -1,3 +1,4 @@
 accessing
 defaultScript
-	^ ZeroConfPharoImageScript pharo30, ZeroConfVMScript pharo
+	^ (ZeroConfImageVersionScript pharo: self class stableVersion), 
+	  (ZeroConfVMVersionScript pharo: self class stableVersion status: #stable) 

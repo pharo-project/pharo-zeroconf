@@ -1,3 +1,3 @@
 accessing
 version
-	^ version ifNil: [ 'latest' ].
+	^ version ifNil: [ self defaultVersion ].

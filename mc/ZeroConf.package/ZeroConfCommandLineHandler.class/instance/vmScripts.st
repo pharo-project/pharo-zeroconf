@@ -1,8 +1,5 @@
 accessing
 vmScripts
-	^ { 
-		ZeroConfVMScript pharo. 
-		ZeroConfVMScript latestPharo.	
-		"ZeroConfVMScript pharoS. "
-		ZeroConfVMScript latestPharoS.
-	}
+	^ self imageVersions 
+		inject: #() 
+		into: [ :all :each | all, (self vmScriptsVersion: each) ]

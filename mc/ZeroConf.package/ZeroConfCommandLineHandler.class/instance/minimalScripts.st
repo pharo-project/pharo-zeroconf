@@ -1,5 +1,5 @@
 accessing
 minimalScripts
 	^ (self imageVersions 
-		select: [ :each | ZeroConfMinimalImageScript canBeGenerated: each ]) 
-		collect: [ :each | ZeroConfMinimalImageScript minimal: each ]
+		select: [ :each | ZeroConfMinimalImageVersionScript canBeGenerated: each ]) 
+		collect: [ :each | ZeroConfMinimalImageVersionScript pharo: each ]
