@@ -2,7 +2,7 @@ script generation
 generateBody
 	self
 		<<== ('DOWNLOADING THE LATEST ', self imageName asUppercase, ' ' , self release asString, ' IMAGE');
-		<< 'IMAGE_URL="'; print: self imageUrl; <<'"'; cr; cr;
+		<< 'IMAGE_URL="'; << self imageUrl; <<'"'; cr; cr;
 		<< 'echoerr "Downloading the latest '; << self release; << ' Image:"
 echoerr "    $IMAGE_URL"
 
