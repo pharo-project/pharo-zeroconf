@@ -1,3 +1,3 @@
 accessing
 stableVersion 
-	^ 40
+	^ 30

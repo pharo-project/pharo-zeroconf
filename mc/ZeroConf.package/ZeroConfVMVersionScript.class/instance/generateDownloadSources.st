@@ -11,5 +11,5 @@ fi
 echoerr "Downloading PharoV${VERSION}.sources:"
 echoerr "	$FILES_URL/sources.zip"
 $DOWNLOAD_TO$VM_DIR/sources.zip $FILES_URL/sources.zip
-unzip -q $VM_DIR/sources.zip -d $SOURCES_DIR
+unzip -q $VM_DIR/sources.zip -d $FILES_DIR
 rm -rf $VM_DIR/sources.zip'; cr
