@@ -13,10 +13,10 @@ unzip -q $TMP_DIR/image.zip -d $TMP_DIR
 rm -rf image image.zip
 
 PHARO_IMAGE=`find $TMP_DIR -name \*.image`
-mv "$PHARO_IMAGE" '; << self imageName; <<'.image
+mv -i "$PHARO_IMAGE" '; << self imageName; <<'.image
 
 PHARO_CHANGES=`find $TMP_DIR -name \*.changes`
-mv "$PHARO_CHANGES" '; << self imageName; <<'.changes;
+mv -i "$PHARO_CHANGES" '; << self imageName; <<'.changes;
 
 rm -r $TMP_DIR >> /dev/null
 
