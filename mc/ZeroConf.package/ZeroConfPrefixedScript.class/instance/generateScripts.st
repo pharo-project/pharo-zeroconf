@@ -1,4 +1,4 @@
-as yet unclassified
+script generation
 generateScripts
 
 	self inlinePrefixScripts 
