@@ -1,13 +1,14 @@
 {
 	"class" : {
-		"pharo11" : "DamienPollet 4/28/2015 17:47:39",
-		"pharo12" : "DamienPollet 4/28/2015 17:47:39",
-		"pharo13" : "DamienPollet 4/28/2015 17:47:39",
-		"pharo14" : "DamienPollet 4/28/2015 17:47:39",
-		"pharo20" : "DamienPollet 4/28/2015 17:47:39",
-		"pharo30" : "DamienPollet 4/28/2015 17:47:39",
-		"pharo40" : "DamienPollet 4/28/2015 17:47:39",
-		"pharo50" : "DamienPollet 4/28/2015 17:47:39",
-		"pharo:" : "DamienPollet 4/28/2015 17:47:39" },
+		"pharo11" : "CamilloBruni 4/6/2013 17:47",
+		"pharo12" : "CamilloBruni 4/6/2013 17:47",
+		"pharo13" : "CamilloBruni 4/6/2013 17:47",
+		"pharo14" : "CamilloBruni 4/6/2013 17:47",
+		"pharo20" : "CamilloBruni 4/6/2013 17:47",
+		"pharo30" : "CamilloBruni 4/6/2013 17:47",
+		"pharo40" : "EstebanLorenzano 4/24/2014 16:55",
+		"pharo50" : "EstebanLorenzano 3/11/2015 12:35",
+		"pharo60" : "EstebanLorenzano 4/28/2016 15:54",
+		"pharo:" : "CamilloBruni 4/6/2013 17:47" },
 	"instance" : {
 		 } }

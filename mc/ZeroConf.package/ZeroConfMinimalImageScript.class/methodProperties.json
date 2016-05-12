@@ -1,10 +1,11 @@
 {
 	"class" : {
-		"canBeGenerated:" : "DamienPollet 4/28/2015 17:47:39",
-		"minimal40" : "DamienPollet 4/28/2015 17:47:39",
-		"minimal50" : "DamienPollet 4/28/2015 17:47:39",
-		"minimal:" : "DamienPollet 4/28/2015 17:47:39" },
+		"canBeGenerated:" : "EstebanLorenzano 3/11/2015 12:59",
+		"minimal40" : "EstebanLorenzano 3/11/2015 12:53",
+		"minimal50" : "EstebanLorenzano 3/11/2015 12:53",
+		"minimal60" : "EstebanLorenzano 4/28/2016 15:54",
+		"minimal:" : "EstebanLorenzano 3/11/2015 12:52" },
 	"instance" : {
-		"defaultBasename" : "DamienPollet 4/28/2015 17:47:39",
-		"imageName" : "DamienPollet 4/28/2015 17:47:39",
-		"imageZip" : "DamienPollet 4/28/2015 17:47:39" } }
+		"defaultBasename" : "EstebanLorenzano 3/11/2015 13:18",
+		"imageName" : "EstebanLorenzano 3/11/2015 12:48",
+		"imageZip" : "EstebanLorenzano 3/11/2015 12:49" } }
