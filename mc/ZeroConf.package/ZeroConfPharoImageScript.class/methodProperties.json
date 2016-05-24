@@ -1,14 +1,14 @@
 {
 	"class" : {
-		"pharo11" : "CamilloBruni 4/6/2013 17:47",
-		"pharo12" : "CamilloBruni 4/6/2013 17:47",
-		"pharo13" : "CamilloBruni 4/6/2013 17:47",
-		"pharo14" : "CamilloBruni 4/6/2013 17:47",
-		"pharo20" : "CamilloBruni 4/6/2013 17:47",
-		"pharo30" : "CamilloBruni 4/6/2013 17:47",
-		"pharo40" : "EstebanLorenzano 4/24/2014 16:55",
-		"pharo50" : "EstebanLorenzano 3/11/2015 12:35",
-		"pharo60" : "EstebanLorenzano 4/28/2016 15:54",
-		"pharo:" : "CamilloBruni 4/6/2013 17:47" },
+		"pharo11" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo12" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo13" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo14" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo20" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo30" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo40" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo50" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo60" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"pharo:" : "EstebanLorenzano 5/12/2016 17:01:48" },
 	"instance" : {
 		 } }
