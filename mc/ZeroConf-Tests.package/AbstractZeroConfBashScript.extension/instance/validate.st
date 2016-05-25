@@ -1,4 +1,4 @@
-validation
+*ZeroConf-Tests-validation
 validate
 	"validate the generated script"
 	self

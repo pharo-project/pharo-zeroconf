@@ -1,0 +1,13 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"redirectOutputOfProcess:" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"run" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"validate" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"validateGenerate" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"validateGeneratedArtifacts" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"validateRun" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"validateScript" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"validationTimeout" : "EstebanLorenzano 5/12/2016 17:01:48",
+		"waitForRunProcess:" : "EstebanLorenzano 5/12/2016 17:01:48" } }

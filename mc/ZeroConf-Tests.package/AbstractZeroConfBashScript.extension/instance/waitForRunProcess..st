@@ -1,4 +1,4 @@
-running
+*ZeroConf-Tests-running
 waitForRunProcess: process
 	[ 10 milliSeconds wait. process isComplete ] whileFalse.
 

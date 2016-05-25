@@ -1,4 +1,4 @@
-validation
+*ZeroConf-Tests-validation
 validateScript
 	self 
 		assert: self file isFile

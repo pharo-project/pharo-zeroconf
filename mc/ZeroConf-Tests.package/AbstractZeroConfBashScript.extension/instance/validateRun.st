@@ -1,4 +1,4 @@
-validation
+*ZeroConf-Tests-validation
 validateRun
 	[ self run ]	
 		valueWithin: self validationTimeout 

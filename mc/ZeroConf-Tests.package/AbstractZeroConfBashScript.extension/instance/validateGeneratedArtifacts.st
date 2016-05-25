@@ -1,4 +1,4 @@
-validation
+*ZeroConf-Tests-validation
 validateGeneratedArtifacts
 	| generatedArtifacts expectedArtifacts |
 					

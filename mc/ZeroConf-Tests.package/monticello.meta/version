@@ -1,1 +1,2 @@
-(name 'ZeroConf-Tests-EstebanLorenzano.1' message '' id 'e0be03f0-ff84-4c33-ac69-bcd6ce41e6c6' date '24 April 2014' time '4:42:49.107447 pm' author 'EstebanLorenzano' ancestors () stepChildren ())
+(name 'ZeroConf-Tests-PeterUhnak.2' message 'Moved methods related to tests & script validation from ZeroConf to ZeroConf-Tests package.' id '7c39728b-9ce6-4124-9267-37639e06c6a4' date '24 May 2016' time '5:55:07.881217 pm' author 'PeterUhnak' ancestors ((name 'ZeroConf-Tests-EstebanLorenzano.1' message '- package tests splitted
+' id 'b20bde14-1de5-5a4a-a222-591582e762b5' date '24 April 2014' time '4:43:43 pm' author 'EstebanLorenzano' ancestors () stepChildren ())) stepChildren ())

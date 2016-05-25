@@ -1,4 +1,4 @@
-running
+*ZeroConf-Tests-running
 run
 	| process redirect |
 	

@@ -1,9 +1,9 @@
 {
 	"class" : {
-		"isAbstract" : "CamilloBruni 3/30/2013 13:19" },
+		"isAbstract" : "EstebanLorenzano 4/24/2014 16:43:43" },
 	"instance" : {
-		"cleanUp" : "CamilloBruni 1/10/2014 16:07",
-		"generateTest" : "CamilloBruni 3/30/2013 13:17",
-		"helpTest" : "CamilloBruni 1/25/2014 17:59",
-		"runScriptTest:" : "CamilloBruni 1/25/2014 17:57",
-		"runTest" : "CamilloBruni 1/25/2014 18:03" } }
+		"cleanUp" : "EstebanLorenzano 4/24/2014 16:43:43",
+		"generateTest" : "EstebanLorenzano 4/24/2014 16:43:43",
+		"helpTest" : "EstebanLorenzano 4/24/2014 16:43:43",
+		"runScriptTest:" : "EstebanLorenzano 4/24/2014 16:43:43",
+		"runTest" : "EstebanLorenzano 4/24/2014 16:43:43" } }
