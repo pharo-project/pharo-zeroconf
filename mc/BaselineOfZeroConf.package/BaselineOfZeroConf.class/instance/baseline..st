@@ -1,5 +1,4 @@
 accessing
-"protocol: accessing"
 baseline: spec 
 	<baseline>
 	

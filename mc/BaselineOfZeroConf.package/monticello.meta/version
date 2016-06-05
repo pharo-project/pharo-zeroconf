@@ -1,4 +1,5 @@
-(name 'BaselineOfZeroConf-PeterUhnak.4' message 'Command shell definition in a separate message.' id '35ced14f-1b3d-4e90-82a9-c43b27fbfeb4' date '5 June 2016' time '3:33:58.408612 pm' author 'PeterUhnak' ancestors ((name 'BaselineOfZeroConf-PeterUhnak.3' message 'Don''t set repository.
+(name 'BaselineOfZeroConf-PeterUhnak.5' message 'Extra comment removed.' id 'e94a0e49-2705-44f7-9223-890b16640caf' date '5 June 2016' time '3:34:59.055943 pm' author 'PeterUhnak' ancestors ((name 'BaselineOfZeroConf-PeterUhnak.4' message 'Command shell definition in a separate message.
+' id '843f63a7-1889-54ba-aa04-f5f82937f6c4' date '5 June 2016' time '3:33:58 pm' author 'PeterUhnak' ancestors ((name 'BaselineOfZeroConf-PeterUhnak.3' message 'Don''t set repository.
 ' id '9d18f975-14cd-52e2-8656-68932ccc6a14' date '30 May 2016' time '7:02:45 pm' author 'PeterUhnak' ancestors ((name 'BaselineOfZeroConf-PeterUhnak.2' message 'Updated baseline to only load core by default.
 ' id '24a507ba-d773-5626-a585-a6e9ebd300fa' date '24 May 2016' time '6:06:45 pm' author 'PeterUhnak' ancestors ((name 'BaselineOfZeroConf-EstebanLorenzano.1' message '- package tests splitted
-' id 'cfd94617-883b-5001-b607-ddde3f806b0e' date '24 April 2014' time '4:43:43 pm' author 'EstebanLorenzano' ancestors () stepChildren ())) stepChildren ())) stepChildren ())) stepChildren ())
+' id 'cfd94617-883b-5001-b607-ddde3f806b0e' date '24 April 2014' time '4:43:43 pm' author 'EstebanLorenzano' ancestors () stepChildren ())) stepChildren ())) stepChildren ())) stepChildren ())) stepChildren ())
