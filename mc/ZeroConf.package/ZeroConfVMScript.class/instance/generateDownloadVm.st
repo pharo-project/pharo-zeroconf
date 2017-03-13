@@ -15,7 +15,7 @@ unzip -q $VM_DIR/vm.zip -d $VM_DIR
 rm -rf $VM_DIR/vm.zip
 
 if [ "$OS" == "win" ]; then
-    PHARO_VM=`find $VM_DIR -name ${VM_BINARY_NAME}.exe`
+    PHARO_VM=`find $VM_DIR -name ${VM_BINARY_NAME_WINDOWS}.exe`
 elif [ "$OS" == "mac" ]; then
     PHARO_VM=`find $VM_DIR -name ${VM_BINARY_NAME}`
 elif [ "$OS" == "linux" ]; then

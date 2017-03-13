@@ -1,15 +1,15 @@
 {
 	"class" : {
-		"withPrefix:" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"withPrefix:with:" : "EstebanLorenzano 5/12/2016 17:01:48" },
+		"withPrefix:" : "CamilloBruni 1/25/2014 16:07",
+		"withPrefix:with:" : "CamilloBruni 1/25/2014 16:07" },
 	"instance" : {
-		"/" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"addAllPrefix:" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"addPrefix:" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"defaultDirectory" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"generateBody" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"generatePrefixScripts" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"generateScripts" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"initialize" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"inlinePrefixScripts" : "EstebanLorenzano 5/12/2016 17:01:48",
-		"prefixScripts" : "EstebanLorenzano 5/12/2016 17:01:48" } }
+		"/" : "CamilloBruni 1/25/2014 16:09",
+		"addAllPrefix:" : "CamilloBruni 1/25/2014 16:07",
+		"addPrefix:" : "CamilloBruni 1/25/2014 15:59",
+		"defaultDirectory" : "CamilloBruni 1/26/2014 15:03",
+		"generateBody" : "CamilloBruni 1/26/2014 15:15",
+		"generatePrefixScripts" : "CamilloBruni 1/26/2014 15:15",
+		"generateScripts" : "DamienPollet 4/28/2015 17:47:39",
+		"initialize" : "EstebanLorenzano 3/25/2015 15:23",
+		"inlinePrefixScripts" : "CamilloBruni 1/26/2014 15:15",
+		"prefixScripts" : "CamilloBruni 1/25/2014 15:59" } }
