@@ -1,7 +1,7 @@
 script generation
 generatePlatformTest
 	self << 'TMP_OS=`uname | tr "[:upper:]" "[:lower:]"`
-elif [[ "{$TMP_OS}" = *linux* ]]; then
+if [[ "{$TMP_OS}" = *linux* ]]; then
     OS="linux";
 else
     echo "Unsupported OS (threaded VM is just meant to linux)";
