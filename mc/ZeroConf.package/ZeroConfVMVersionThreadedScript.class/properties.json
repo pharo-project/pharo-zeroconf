@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "EstebanLorenzano 3/13/2017 16:29",
+	"super" : "ZeroConfVMVersionScript",
+	"category" : "ZeroConf-Unity",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ZeroConfVMVersionThreadedScript",
+	"type" : "normal"
+}

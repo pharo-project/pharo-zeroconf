@@ -1,14 +1,13 @@
 {
-	"category" : "ZeroConf",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		"outputDirectory" ],
-	"name" : "ZeroConfCommandLineHandler",
-	"pools" : [
-		 ],
 	"super" : "CommandLineHandler",
-	"type" : "normal" }
+	"category" : "ZeroConf",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"outputDirectory"
+	],
+	"name" : "ZeroConfCommandLineHandler",
+	"type" : "normal"
+}

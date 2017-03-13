@@ -1,14 +1,11 @@
 {
-	"category" : "ZeroConf",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "CamilloBruni 1/25/2014 15:14",
-	"instvars" : [
-		 ],
-	"name" : "ZeroConfTravisVM",
-	"pools" : [
-		 ],
 	"super" : "AbstractZeroConfBashScript",
-	"type" : "normal" }
+	"category" : "ZeroConf",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ZeroConfTravisVM",
+	"type" : "normal"
+}

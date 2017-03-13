@@ -1,15 +1,16 @@
 {
+	"commentStamp" : "<historical>",
+	"super" : "AbstractZeroConfBashScript",
 	"category" : "ZeroConf",
 	"classinstvars" : [
-		"imageVersion" ],
-	"classvars" : [
-		 ],
-	"commentStamp" : "<historical>",
+		"imageVersion"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"release",
-		"version" ],
+		"version"
+	],
 	"name" : "ZeroConfImageScript",
-	"pools" : [
-		 ],
-	"super" : "AbstractZeroConfBashScript",
-	"type" : "normal" }
+	"type" : "normal"
+}

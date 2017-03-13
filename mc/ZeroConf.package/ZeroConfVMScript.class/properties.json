@@ -1,16 +1,15 @@
 {
-	"category" : "ZeroConf",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
+	"super" : "AbstractZeroConfBashScript",
+	"category" : "ZeroConf",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"type",
 		"release",
-		"vmDirectory" ],
+		"vmDirectory"
+	],
 	"name" : "ZeroConfVMScript",
-	"pools" : [
-		 ],
-	"super" : "AbstractZeroConfBashScript",
-	"type" : "normal" }
+	"type" : "normal"
+}

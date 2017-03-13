@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"description" : "EstebanLorenzano 3/13/2017 16:30",
+		"generateVmProperties" : "EstebanLorenzano 3/13/2017 16:44",
+		"generateDownloadVm" : "EstebanLorenzano 3/13/2017 16:33",
+		"generatePlatformTest" : "EstebanLorenzano 3/13/2017 16:33",
+		"vmUrl" : "EstebanLorenzano 3/13/2017 16:31"
+	},
+	"class" : {
+		"worksWithVersion:" : "EstebanLorenzano 3/13/2017 16:15",
+		"basenameVM" : "EstebanLorenzano 3/13/2017 16:16"
+	}
+}

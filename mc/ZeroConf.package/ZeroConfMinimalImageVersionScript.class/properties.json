@@ -1,14 +1,11 @@
 {
-	"category" : "ZeroConf-Unity",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		 ],
-	"name" : "ZeroConfMinimalImageVersionScript",
-	"pools" : [
-		 ],
 	"super" : "ZeroConfImageVersionScript",
-	"type" : "normal" }
+	"category" : "ZeroConf-Unity",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ZeroConfMinimalImageVersionScript",
+	"type" : "normal"
+}
