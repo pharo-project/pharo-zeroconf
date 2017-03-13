@@ -9,6 +9,6 @@ generateLinuxScriptTest
 		<< '*       hard    rtprio  2'; cr; 
 		<< '*       soft    rtprio  2'; cr; 
 		<< 'END" > ./CONFIG'; cr;
-		<< 'chmod +x ./CONFIG' 
+		<< 'chmod +x ./CONFIG';
 		cr.
 	super generateLinuxScriptTest
