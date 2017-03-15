@@ -17,7 +17,10 @@ set -f
 # run the VM and pass along all arguments as is'' >> $VM_SCRIPT
 	
 	# make sure we only substite $PHARO_VM but put "$DIR" in the script
-	echo -n \\"\\$DIR\\"/\\"$PHARO_VM\\" >> $VM_SCRIPT
+	if [ "$OS" == "linux" ]; then
+		echo -n "\\$LD_LIBRARY_PATH=\\$DIR/$PHARO_VM:\\$LD_LIBRARY_PATH " >> $VM_SCRIPT
+	fi
+	echo -n "\\$DIR/$PHARO_VM" >> $VM_SCRIPT
 	
 	# only output the headless option if the VM_SCRIPT name does not include "ui"
 	if [[ "\{$VM_SCRIPT}" != *ui* ]]; then
