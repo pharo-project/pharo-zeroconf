@@ -18,7 +18,7 @@ set -f
 	
 	# make sure we only substite $PHARO_VM but put "$DIR" in the script
 	if [ "$OS" == "linux" ]; then
-		echo -n "\\$LD_LIBRARY_PATH=\\$DIR/$PHARO_VM:\\$LD_LIBRARY_PATH " >> $VM_SCRIPT
+		echo -n "\\$LD_LIBRARY_PATH=\\$DIR/`dirname $PHARO_VM`:\\$LD_LIBRARY_PATH " >> $VM_SCRIPT
 	fi
 	echo -n "\\$DIR/$PHARO_VM" >> $VM_SCRIPT
 	
