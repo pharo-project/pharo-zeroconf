@@ -11,4 +11,3 @@ generateLinuxScriptTest
 		<< 'END" > ./CONFIG'; cr;
 		<< 'chmod +x ./CONFIG'; cr;
 		cr.
-	super generateLinuxScriptTest
