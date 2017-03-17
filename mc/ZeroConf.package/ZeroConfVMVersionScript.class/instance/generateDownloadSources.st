@@ -4,7 +4,7 @@ generateDownloadSources
 		<<== 'DOWNLOAD THE PHARO ARCHIVED SOURCES FILE';
 		<< 'if [ "$OS" = "linux" ]; then
 	if [ -d "$VM_DIR/lib" ]; then
-		SOURCES_DIR="`ls -d $VM_DIR/lib/*`";
+		SOURCES_DIR="`ls -d $VM_DIR/lib/pharo/*`";
 	else
 		SOURCES_DIR=$VM_DIR;
 	fi

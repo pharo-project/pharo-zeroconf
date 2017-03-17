@@ -2,7 +2,13 @@ script generation
 generateDownloadSources
 	self
 		<<== 'DOWNLOAD THE PHARO ARCHIVED SOURCES FILE';
-		<< 'if [ "$OS" = "mac" ]; then
+		<< 'if [ "$OS" = "linux" ]; then
+	if [ -d "$VM_DIR/lib" ]; then
+		SOURCES_DIR="`ls -d $VM_DIR/lib/pharo/*`";
+	else
+		SOURCES_DIR=$VM_DIR;
+	fi
+elif [ "$OS" = "mac" ]; then
 	SOURCES_DIR=$VM_DIR;
 else
 	SOURCES_DIR=`dirname $PHARO_VM`;
