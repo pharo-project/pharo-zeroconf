@@ -19,7 +19,7 @@ if [ "$OS" == "win" ]; then
 elif [ "$OS" == "mac" ]; then
     PHARO_VM=`find $VM_DIR -name ${VM_BINARY_NAME}`
 elif [ "$OS" == "linux" ]; then
-    PHARO_VM=`find $VM_DIR -name ${VM_BINARY_NAME_LINUX}`
+    PHARO_VM=`ls $VM_DIR/${VM_BINARY_NAME_LINUX}`
 fi
 
 echo $PHARO_VM'; cr

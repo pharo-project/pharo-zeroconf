@@ -14,6 +14,6 @@ $DOWNLOAD_TO$VM_DIR/vm.zip $VM_URL
 unzip -q $VM_DIR/vm.zip -d $VM_DIR
 rm -rf $VM_DIR/vm.zip
 
-PHARO_VM=`find $VM_DIR -name ${VM_BINARY_NAME_LINUX}`
+PHARO_VM=`ls $VM_DIR/${VM_BINARY_NAME_LINUX}`
 
 echo $PHARO_VM'; cr
