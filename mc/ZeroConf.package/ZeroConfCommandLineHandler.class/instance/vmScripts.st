@@ -1,4 +1,4 @@
-accessing
+accessing scripts
 vmScripts
 	^ self imageVersions 
 		inject: #() 

@@ -1,0 +1,3 @@
+accessing
+arch
+	^ arch ifNil: [ '' ]

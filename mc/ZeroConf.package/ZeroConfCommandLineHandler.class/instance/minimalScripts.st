@@ -1,4 +1,4 @@
-accessing
+accessing scripts
 minimalScripts
 	^ (self imageVersions 
 		select: [ :each | ZeroConfMinimalImageVersionScript canBeGenerated: each ]) 

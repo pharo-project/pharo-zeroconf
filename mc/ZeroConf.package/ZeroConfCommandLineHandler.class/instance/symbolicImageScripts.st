@@ -1,4 +1,4 @@
-accessing
+accessing scripts
 symbolicImageScripts
 	"manually mark a stable and an unstable alpha release"
 	^ { 

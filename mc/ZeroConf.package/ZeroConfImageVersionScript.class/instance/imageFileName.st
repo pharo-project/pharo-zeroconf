@@ -1,3 +1,3 @@
 accessing
 imageFileName
-	^ 'pharo'
+	^ imageFileName ifNil: [ self class defaultImageFileName ]

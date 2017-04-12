@@ -1,4 +1,4 @@
-accessing
+accessing scripts
 vmScriptsVersion: version
 	| scripts hasThreaded |
 	

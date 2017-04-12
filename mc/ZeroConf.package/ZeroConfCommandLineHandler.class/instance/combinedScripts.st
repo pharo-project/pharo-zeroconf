@@ -1,4 +1,4 @@
-accessing
+accessing scripts
 combinedScripts
 	^ Array streamContents: [ :stream |
 		(self imageScripts 

@@ -18,12 +18,4 @@ indexScriptExamplesHtmlOn: s
 <td><code>./pharo Pharo.image eval "Class allInstances"</code></td>
 </tr>
 
-<tr>
-<td>Install a configuration from the command line: </td>
-<td>
-	<pre>./pharo Pharo.image config \
-          http://smalltalkhub.com/mc/Pharo/ZeroConf/main \
-          ConfigurationOfZeroconf \
-          --install=development</pre>
-</tr>
 </table>'.

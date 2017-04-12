@@ -1,3 +1,3 @@
-accessing
+accessing scripts
 scripts
-	^ self imageScripts, self vmScripts, self combinedScripts", self travisVmScripts"
+	^ self imageScripts, self vmScripts, self combinedScripts
