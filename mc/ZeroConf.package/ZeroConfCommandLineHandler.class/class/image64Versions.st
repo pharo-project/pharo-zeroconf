@@ -1,3 +1,3 @@
 accessing
 image64Versions
-	^ #(60)
+	^ #(60 70)
