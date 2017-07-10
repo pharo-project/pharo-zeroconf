@@ -16,8 +16,15 @@ PHARO_IMAGE=`find $TMP_DIR -name \*.image`
 mv -i "$PHARO_IMAGE" '; << self imageName; <<'.image
 
 PHARO_CHANGES=`find $TMP_DIR -name \*.changes`
-mv -i "$PHARO_CHANGES" '; << self imageName; <<'.changes;
+mv -i "$PHARO_CHANGES" '; << self imageName; <<'.changes;'.
 
+	(self release >= 70) 
+		ifTrue: [ self cr; << '
+PHARO_IMAGE_SOURCES=`find $TMP_DIR -name \*.sources`
+PHARO_IMAGE_SOURCES_FILENAME=$(basename "$PHARO_IMAGE_SOURCES")
+mv -i "$PHARO_IMAGE_SOURCES" "$PHARO_IMAGE_SOURCES_FILENAME"'; cr. ].
+	
+	self << '
 rm -r $TMP_DIR >> /dev/null
 
 echo '; << self imageName; <<'.image'; cr
