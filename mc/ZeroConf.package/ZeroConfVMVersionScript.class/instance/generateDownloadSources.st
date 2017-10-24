@@ -1,5 +1,6 @@
 script generation
 generateDownloadSources
+	(self release asNumber >= 70) ifTrue: [ ^ self ]. 
 	self
 		<<== 'DOWNLOAD THE PHARO ARCHIVED SOURCES FILE';
 		<< 'if [ "$OS" = "linux" ]; then
