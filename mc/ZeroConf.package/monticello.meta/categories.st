@@ -1,2 +1,2 @@
 SystemOrganization addCategory: #ZeroConf!
-SystemOrganization addCategory: 'ZeroConf-Unity'!
+SystemOrganization addCategory: #'ZeroConf-Unity'!

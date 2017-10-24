@@ -12,11 +12,15 @@ $DOWNLOAD_TO$TMP_DIR/image.zip $IMAGE_URL
 unzip -q $TMP_DIR/image.zip -d $TMP_DIR
 rm -rf image image.zip
 
+if [ -e '; << self imageName; << '.image ]; then
+	BKDATE=`date +%Y%m%d%H%M`
+	cp -f '; << self imageName; << '.image '; << self imageName; << '.image.bak.$BKDATE
+	cp -f '; << self imageName; << '.changes '; << self imageName; << '.changes.bak.$BKDATE
+fi
 PHARO_IMAGE=`find $TMP_DIR -name \*.image`
-mv -i "$PHARO_IMAGE" '; << self imageName; <<'.image
-
+mv -f "$PHARO_IMAGE" '; << self imageName; <<'.image
 PHARO_CHANGES=`find $TMP_DIR -name \*.changes`
-mv -i "$PHARO_CHANGES" '; << self imageName; <<'.changes;'.
+mv -f "$PHARO_CHANGES" '; << self imageName; <<'.changes;'.
 
 	(self release >= 70) 
 		ifTrue: [ self cr; << '
