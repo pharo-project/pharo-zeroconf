@@ -9,6 +9,8 @@ elif [[ "{$TMP_OS}" = *win* ]]; then
     OS="win";
 elif [[ "{$TMP_OS}" = *mingw* ]]; then
     OS="win";
+elif [[ "{$TMP_OS}" = *msys* ]]; then
+    OS="win";
 else
     echo "Unsupported OS";
     exit 1;
