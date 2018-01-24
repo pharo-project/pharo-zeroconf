@@ -3,6 +3,7 @@ formattedUrl
 	"Return a formatted url where $+ is not urlencoded"
 	| pathString |
 	^ String streamContents: [ :s|
+		s << self url scheme << '://'.
 		self url printAuthorityOn: s.
 		pathString := self url pathPrintString.
 		"do not print a single /"

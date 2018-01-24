@@ -1,3 +1,3 @@
 accessing
 fileBaseUrl
-	^ 'http://files.pharo.org' asZnUrl
+	^ 'https://files.pharo.org' asZnUrl
