@@ -8,7 +8,7 @@ generateDownloadVm
 echoerr "Downloading the latest ${VM_TYPE}VM:"
 echoerr "	$VM_URL"
 
-mkdir $VM_DIR
+mkdir -p $VM_DIR
 $DOWNLOAD_TO$VM_DIR/vm.zip $VM_URL
 
 unzip -q $VM_DIR/vm.zip -d $VM_DIR
