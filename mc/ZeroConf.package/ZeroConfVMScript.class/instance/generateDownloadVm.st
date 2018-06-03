@@ -11,7 +11,7 @@ echoerr "	$VM_URL"
 mkdir -p $VM_DIR
 $DOWNLOAD_TO$VM_DIR/vm.zip $VM_URL
 
-unzip -q $VM_DIR/vm.zip -d $VM_DIR
+unzip -oq $VM_DIR/vm.zip -d $VM_DIR
 rm -rf $VM_DIR/vm.zip
 
 if [ "$OS" == "win" ]; then
