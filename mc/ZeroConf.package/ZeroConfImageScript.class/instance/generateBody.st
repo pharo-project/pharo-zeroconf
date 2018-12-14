@@ -2,7 +2,7 @@ script generation
 generateBody
 	self
 		<<== ('DOWNLOADING THE LATEST ', self imageName asUppercase, ' ' , self release asString, ' IMAGE');
-		<< 'IMAGE_URL="'; << self imageUrl; <<'"'; cr; cr;
+		<< 'IMAGE_URL="'; << self imageUrl asString; <<'"'; cr; cr;
 		<< 'echoerr "Downloading the latest '; << self release; << ' Image:"
 echoerr "    $IMAGE_URL"
 
@@ -22,7 +22,7 @@ mv -f "$PHARO_IMAGE" '; << self imageName; <<'.image
 PHARO_CHANGES=`find $TMP_DIR -name \*.changes`
 mv -f "$PHARO_CHANGES" '; << self imageName; <<'.changes;'.
 
-	(self release >= 70) 
+	(self release asInteger >= 70) 
 		ifTrue: [ self cr; << '
 PHARO_IMAGE_SOURCES=`find $TMP_DIR -name \*.sources`
 PHARO_IMAGE_SOURCES_FILENAME=$(basename "$PHARO_IMAGE_SOURCES")

@@ -3,10 +3,10 @@ baseline: spec
 	<baseline>
 	
 	spec for: #pharo do: [
-		self commandShell: spec.
+		self osSubprocess: spec.
 		
 		spec package: 'ZeroConf'.
-		spec package: 'ZeroConf-Tests' with: [ spec requires: #('CommandShell') ].
+		spec package: 'ZeroConf-Tests' with: [ spec requires: #('OSSubprocess') ].
 		
 		spec group: 'all' with: #('ZeroConf' 'ZeroConf-Tests').
-		spec group: 'default' with: #('ZeroConf') ]	
+		spec group: 'default' with: #('all') ]	

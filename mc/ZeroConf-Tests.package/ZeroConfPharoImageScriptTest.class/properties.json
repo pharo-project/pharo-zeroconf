@@ -1,14 +1,11 @@
 {
-	"category" : "ZeroConf-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "ZeroConfPharoImageScriptTest",
-	"pools" : [
-		 ],
 	"super" : "ZeroConfImageScriptTest",
-	"type" : "normal" }
+	"category" : "ZeroConf-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ZeroConfPharoImageScriptTest",
+	"type" : "normal"
+}
