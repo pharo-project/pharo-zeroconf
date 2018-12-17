@@ -6,4 +6,5 @@ generate
 		generateHelp; cr; cr;
 		generateBody; cr; cr.
 	self needsHtmlHelp 
-		ifTrue: [ self generateHtmlHelp ]
+		ifTrue: [ self generateHtmlHelp ].
+	outputStream close.

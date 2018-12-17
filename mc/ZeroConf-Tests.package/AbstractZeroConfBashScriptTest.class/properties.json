@@ -1,14 +1,13 @@
 {
-	"category" : "ZeroConf-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		"script" ],
-	"name" : "AbstractZeroConfBashScriptTest",
-	"pools" : [
-		 ],
 	"super" : "ClassTestCase",
-	"type" : "normal" }
+	"category" : "ZeroConf-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"script"
+	],
+	"name" : "AbstractZeroConfBashScriptTest",
+	"type" : "normal"
+}
