@@ -23,7 +23,7 @@ set -f
 		echo "shift" >> $VM_SCRIPT
 		echo "image_arguments=\\"\\$@\\"" >> $VM_SCRIPT
 		echo -n \\"\\$DIR\\"/\\"$PHARO_VM\\" >> $VM_SCRIPT
-		echo " \\"\\$image_name\\" --interactive \\"\\$image_arguments\\"\\"" >> $VM_SCRIPT
+		echo " \\"\\$image_name\\" --interactive \\"\\$image_arguments\\"" >> $VM_SCRIPT
 	else
 		# make sure we only substite $PHARO_VM but put "$DIR" in the script
 		echo -n \\"\\$DIR\\"/\\"$PHARO_VM\\" >> $VM_SCRIPT
