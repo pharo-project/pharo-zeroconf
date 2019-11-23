@@ -17,19 +17,18 @@ cd - > /dev/null
 set -f
 # run the VM and pass along all arguments as is'' >> $VM_SCRIPT
 	
+	echo "image_name=\\"\\$1\\"" >> $VM_SCRIPT
+	echo "shift" >> $VM_SCRIPT
+
+	# make sure we only substite $PHARO_VM but put "$DIR" in the script
+	echo -n "\\"\\$DIR\\"/\\"$PHARO_VM\\" \\"\\$image_name\\"" >> $VM_SCRIPT
+
 	# output the interactive option if the VM_SCRIPT name includes "ui"
 	if [[ "\{$VM_SCRIPT}" == *ui* ]]; then
-		echo "image_name=\\"\\$1\\"" >> $VM_SCRIPT
-		echo "shift" >> $VM_SCRIPT
-		echo "image_arguments=\\"\\$@\\"" >> $VM_SCRIPT
-		echo -n \\"\\$DIR\\"/\\"$PHARO_VM\\" >> $VM_SCRIPT
-		echo " \\"\\$image_name\\" --interactive \\"\\$image_arguments\\"" >> $VM_SCRIPT
-	else
-		# make sure we only substite $PHARO_VM but put "$DIR" in the script
-		echo -n \\"\\$DIR\\"/\\"$PHARO_VM\\" >> $VM_SCRIPT
-		# forward all arguments unprocessed using $@
-		echo " \\"\\$@\\"" >> $VM_SCRIPT
+		echo -n " --interactive" >> $VM_SCRIPT
 	fi
+	# forward all arguments unprocessed using $@
+	echo " \\"\\$@\\"" >> $VM_SCRIPT
 	
 	# make the script executable
 	chmod +x $VM_SCRIPT
