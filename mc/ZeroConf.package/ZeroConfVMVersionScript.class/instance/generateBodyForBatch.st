@@ -4,4 +4,4 @@ generateBodyForBatch
 		generateVersionPropertiesForBatch;
 		cr;
 		cr.
-	super generateBody
+	super generateBodyForBatch
