@@ -1,3 +1,3 @@
 testing
 worksWithVersion: version
-	^ version = 61
+	^ { 61 . 70 . 80 } includes: version
