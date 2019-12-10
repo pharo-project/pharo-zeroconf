@@ -1,3 +1,3 @@
 helper
 generate
-	self generateInDirectory: 'out' asFileReference
+	self generateInDirectory: (FileLocator imageDirectory / 'out') asFileReference
