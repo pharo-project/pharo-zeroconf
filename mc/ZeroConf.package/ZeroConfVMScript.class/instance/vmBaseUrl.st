@@ -1,3 +1,3 @@
 accessing
 vmBaseUrl
-	^ self fileBaseUrl / 'vm' / self type
+	^self vmBaseBaseUrl / self type
