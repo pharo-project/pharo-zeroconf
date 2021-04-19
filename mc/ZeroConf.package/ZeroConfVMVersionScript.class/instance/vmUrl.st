@@ -1,3 +1,3 @@
 accessing
 vmUrl
-	^'${FILES_URL}/${VM_TYPE}${VM_ARCH}-${OS}-${VM_STATUS}.zip'
+	^'${FILES_URL}/${VM_TYPE}-${OSNAME}-${VM_ARCH}-${VM_STATUS}.zip'

@@ -2,4 +2,6 @@ script generation
 generateDetectSystemProperties
 	self 
 		<<== 'DETECT SYSTEM PROPERTIES';
-		generatePlatformTest
+		generatePlatformTest;
+		<< 'VM_ARCH=`uname -m`'; cr;
+		<< 'OSNAME=`uname -o`'; cr
