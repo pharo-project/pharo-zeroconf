@@ -1,3 +1,0 @@
-accessing
-arch
-	^ arch ifNil: [ '' ]

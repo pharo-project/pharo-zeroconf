@@ -1,3 +1,3 @@
 testing
 worksWithVersion: version
-	^ version >= 60
+	^ version between: 60 and: 80

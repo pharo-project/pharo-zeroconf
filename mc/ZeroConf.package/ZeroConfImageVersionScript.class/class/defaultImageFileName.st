@@ -1,3 +1,0 @@
-accessing
-defaultImageFileName
-	^ 'pharo'

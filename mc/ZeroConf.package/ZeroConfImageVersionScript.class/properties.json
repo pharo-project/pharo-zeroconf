@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"imageFileName"
-	],
+	"instvars" : [ ],
 	"name" : "ZeroConfImageVersionScript",
 	"type" : "normal"
 }

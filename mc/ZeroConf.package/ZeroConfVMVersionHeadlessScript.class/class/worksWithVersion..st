@@ -1,4 +1,4 @@
 testing
 worksWithVersion: version
 
-	^ version >= 80
+	^ version = 80
