@@ -1,0 +1,245 @@
+#!/usr/bin/env bash
+#<html><head><!--
+# The line above makes a fake HTML document out of this bash script
+
+#This zero conf script was generated from the sources found in:
+#	https://github.com/pharo-project/pharo-zeroconf
+
+# stop the script if a single command fails
+set -e
+
+# define an echo that only outputs to stderr
+echoerr() { echo "$@" 1>&2; }
+#  try to use curl if possible
+if [[ `which curl 2> /dev/null` ]]; then
+	DOWNLOAD="curl --silent --location --compressed ";
+	DOWNLOAD_TO="$DOWNLOAD --output ";
+elif [[ `which wget 2> /dev/null` ]]; then
+	DOWNLOAD_TO="wget --quiet --output-document=";
+	DOWNLOAD="$DOWNLOAD_TO-";
+else
+	echo "Please install curl or wget on your machine";
+	exit 1
+fi
+
+
+
+
+# ARGUMENT HANDLING =============================================================
+if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
+	echo "This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM for 80.
+
+The following artifacts are created:
+    Pharo.changes  A changes file for the Pharo Image
+    Pharo.image    A Pharo image, to be opened with the Pharo VM
+    pharo          Script to run the downloaded VM in headless mode
+    pharo-ui       Script to run the downloaded VM in UI mode
+    pharo-vm/      Directory containing the VM
+"
+	exit 0;
+elif [ $# -gt 0 ]; then
+	echo "--help is the only argument allowed"
+	exit 1;
+fi
+
+
+# DOWNLOAD SUB-SCRIPTS ==========================================================
+# This script downloads the latest Pharo 80 Image. ------------------------------
+$DOWNLOAD https://get.pharo.org/64/80 | bash 
+# This script downloads the stable Pharo VM for 80. -----------------------------
+$DOWNLOAD https://get.pharo.org/64/vm80 | bash 
+
+
+# HTML HELP =====================================================================
+HTML_HELP=<<HTML_HELP 
+-->
+<title>Pharo Zeroconf Script</title>
+<style>
+	BODY, TABLE { 
+		font-family: Arial;
+		line-height: 1.5em;
+	}
+	BODY { 
+		background-color: white;
+		margin-top: -1.5em;
+	}
+	TD { 
+		vertical-align: top;
+		padding: 0 1ex 0 0;
+	}
+	PRE, CODE { 
+		background-color: #EEE;
+		padding: 0.5ex 0.8ex;
+		border-radius: 0.5ex;
+	}
+	A { 
+		color: black;
+	}
+	</style>
+<body>
+<h1>Pharo Zeroconf Script</h1>
+<p>This script downloads the latest Pharo 80 Image.<br/>
+This script downloads the stable Pharo VM for 80.<br/>
+</p>
+<h2>Usage</h2>
+<code>curl <a href="https://get.pharo.org/64">https://get.pharo.org/64</a> | bash </code>
+<br/>
+or if <code>curl</code> is not available: </br>
+<code>wget -O- <a href="https://get.pharo.org/64">https://get.pharo.org/64</a> | bash </code>
+
+<h2>Artifacts</h2>
+<table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>
+<tr><td>Pharo.image</td><td>A Pharo image, to be opened with the Pharo VM</td></tr>
+<tr><td>pharo</td><td>Script to run the downloaded VM in headless mode</td></tr>
+<tr><td>pharo-ui</td><td>Script to run the downloaded VM in UI mode</td></tr>
+<tr><td>pharo-vm/</td><td>Directory containing the VM</td></tr></table>
+<h2>Pharo Example</h2>
+<table>
+
+<tr>
+<td>Show the command line help:</td>
+<td><code>./pharo Pharo.image --help</code></td>
+</tr>
+
+<tr>			
+<td>List all command line handlers:</td>
+<td><code>./pharo Pharo.image --list</code></td>
+</tr>
+
+<tr>			
+<td>Evaluate an expression on the command line:</td>
+<td><code>./pharo Pharo.image eval "Class allInstances"</code></td>
+</tr>
+
+</table><h2>Other Scripts</h2>
+<table><tr><td><code><a href="https://get.pharo.org/64/stable">https://get.pharo.org/64/stable</a></code></td><td>This script downloads the latest Pharo 80 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha">https://get.pharo.org/64/alpha</a></code></td><td>This script downloads the latest Pharo 90 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90">https://get.pharo.org/64/90</a></code></td><td>This script downloads the latest Pharo 90 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/80">https://get.pharo.org/64/80</a></code></td><td>This script downloads the latest Pharo 80 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/70">https://get.pharo.org/64/70</a></code></td><td>This script downloads the latest Pharo 70 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/61">https://get.pharo.org/64/61</a></code></td><td>This script downloads the latest Pharo 61 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/60">https://get.pharo.org/64/60</a></code></td><td>This script downloads the latest Pharo 60 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vm90">https://get.pharo.org/64/vm90</a></code></td><td>This script downloads the stable Pharo VM for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmT90">https://get.pharo.org/64/vmT90</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmI90">https://get.pharo.org/64/vmI90</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmHeadless90">https://get.pharo.org/64/vmHeadless90</a></code></td><td>This script downloads the stable Pharo VM (HEADLESS) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmLatest90">https://get.pharo.org/64/vmLatest90</a></code></td><td>This script downloads the latest Pharo VM for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmTLatest90">https://get.pharo.org/64/vmTLatest90</a></code></td><td>This script downloads the latest Pharo VM (Threaded Heartbeat) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmILatest90">https://get.pharo.org/64/vmILatest90</a></code></td><td>This script downloads the latest Pharo VM (Timer Heartbeat) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmHeadlessLatest90">https://get.pharo.org/64/vmHeadlessLatest90</a></code></td><td>This script downloads the latest Pharo VM (HEADLESS) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vm80">https://get.pharo.org/64/vm80</a></code></td><td>This script downloads the stable Pharo VM for 80.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmT80">https://get.pharo.org/64/vmT80</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 80.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmI80">https://get.pharo.org/64/vmI80</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 80.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmHeadless80">https://get.pharo.org/64/vmHeadless80</a></code></td><td>This script downloads the stable Pharo VM (HEADLESS) for 80.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vm70">https://get.pharo.org/64/vm70</a></code></td><td>This script downloads the stable Pharo VM for 70.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmT70">https://get.pharo.org/64/vmT70</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 70.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmI70">https://get.pharo.org/64/vmI70</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 70.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vm61">https://get.pharo.org/64/vm61</a></code></td><td>This script downloads the stable Pharo VM for 61.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmT61">https://get.pharo.org/64/vmT61</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 61.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmI61">https://get.pharo.org/64/vmI61</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 61.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vm60">https://get.pharo.org/64/vm60</a></code></td><td>This script downloads the stable Pharo VM for 60.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmT60">https://get.pharo.org/64/vmT60</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 60.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/vmI60">https://get.pharo.org/64/vmI60</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 60.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/stable+vm">https://get.pharo.org/64/stable+vm</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/stable+vmT">https://get.pharo.org/64/stable+vmT</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/stable+vmI">https://get.pharo.org/64/stable+vmI</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/stable+vmHeadless">https://get.pharo.org/64/stable+vmHeadless</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (HEADLESS) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha+vm">https://get.pharo.org/64/alpha+vm</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha+vmT">https://get.pharo.org/64/alpha+vmT</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha+vmI">https://get.pharo.org/64/alpha+vmI</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha+vmHeadless">https://get.pharo.org/64/alpha+vmHeadless</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (HEADLESS) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha+vmLatest">https://get.pharo.org/64/alpha+vmLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha+vmTLatest">https://get.pharo.org/64/alpha+vmTLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (Threaded Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha+vmILatest">https://get.pharo.org/64/alpha+vmILatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (Timer Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/alpha+vmHeadlessLatest">https://get.pharo.org/64/alpha+vmHeadlessLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (HEADLESS) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90+vm">https://get.pharo.org/64/90+vm</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90+vmT">https://get.pharo.org/64/90+vmT</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90+vmI">https://get.pharo.org/64/90+vmI</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90+vmHeadless">https://get.pharo.org/64/90+vmHeadless</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (HEADLESS) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90+vmLatest">https://get.pharo.org/64/90+vmLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90+vmTLatest">https://get.pharo.org/64/90+vmTLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (Threaded Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90+vmILatest">https://get.pharo.org/64/90+vmILatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (Timer Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/90+vmHeadlessLatest">https://get.pharo.org/64/90+vmHeadlessLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (HEADLESS) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/80+vm">https://get.pharo.org/64/80+vm</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/80+vmT">https://get.pharo.org/64/80+vmT</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/80+vmI">https://get.pharo.org/64/80+vmI</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/80+vmHeadless">https://get.pharo.org/64/80+vmHeadless</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (HEADLESS) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/70+vm">https://get.pharo.org/64/70+vm</a></code></td><td>This script downloads the latest Pharo 70 Image.
+This script downloads the stable Pharo VM for 70.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/70+vmT">https://get.pharo.org/64/70+vmT</a></code></td><td>This script downloads the latest Pharo 70 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 70.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/70+vmI">https://get.pharo.org/64/70+vmI</a></code></td><td>This script downloads the latest Pharo 70 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 70.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/61+vm">https://get.pharo.org/64/61+vm</a></code></td><td>This script downloads the latest Pharo 61 Image.
+This script downloads the stable Pharo VM for 61.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/61+vmT">https://get.pharo.org/64/61+vmT</a></code></td><td>This script downloads the latest Pharo 61 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 61.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/61+vmI">https://get.pharo.org/64/61+vmI</a></code></td><td>This script downloads the latest Pharo 61 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 61.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/60+vm">https://get.pharo.org/64/60+vm</a></code></td><td>This script downloads the latest Pharo 60 Image.
+This script downloads the stable Pharo VM for 60.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/60+vmT">https://get.pharo.org/64/60+vmT</a></code></td><td>This script downloads the latest Pharo 60 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 60.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/64/60+vmI">https://get.pharo.org/64/60+vmI</a></code></td><td>This script downloads the latest Pharo 60 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 60.
+</td><tr></table>
+<!--
+HTML_HELP
+# --!></body></html>
