@@ -47,7 +47,6 @@ FILES_URL="http://files.pharo.org/get-files/${VERSION}"
 
 # VM PROPERTIES =================================================================
 VM_TYPE="pharo"
-VM_ARCH=""
 VM_BINARY_NAME="Pharo"
 VM_BINARY_NAME_LINUX="pharo"
 VM_BINARY_NAME_WINDOWS="PharoConsole"
@@ -70,14 +69,12 @@ else
     echo "Unsupported OS";
     exit 1;
 fi
-
-if [ -z "$ARCHITECTURE" ] ; then
-    ARCHITECTURE=32;
-fi
+VM_ARCH=`uname -m`
+OSNAME=`uname -o`
 
 
 # DOWNLOAD PHARO FOR 90 VM ======================================================
-VM_URL="${FILES_URL}/${VM_TYPE}${VM_ARCH}-${OS}-${VM_STATUS}.zip"
+VM_URL="${FILES_URL}/${VM_TYPE}-${OSNAME}-${VM_ARCH}-${VM_STATUS}.zip"
 VM_DIR="pharo-vm"
 
 echoerr "Downloading the latest ${VM_TYPE}VM:"
