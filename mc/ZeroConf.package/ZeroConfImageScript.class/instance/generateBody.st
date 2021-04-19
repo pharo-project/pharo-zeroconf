@@ -3,7 +3,7 @@ generateBody
 	self
 		<<== ('DOWNLOADING THE LATEST ', self imageName asUppercase, ' ' , self release asString, ' IMAGE');
 		<< 'IMAGE_URL="'; << self imageUrl asString; <<'"'; cr; cr;
-		<< 'echoerr "Downloading the latest '; << self release; << ' Image:"
+		<< 'echoerr "Downloading the latest '; << self release asString; << ' Image:"
 echoerr "    $IMAGE_URL"
 
 TMP_DIR=`mktemp -d image.XXXXXX`
