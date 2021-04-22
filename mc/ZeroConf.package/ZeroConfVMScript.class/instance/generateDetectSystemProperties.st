@@ -4,4 +4,4 @@ generateDetectSystemProperties
 		<<== 'DETECT SYSTEM PROPERTIES';
 		generatePlatformTest;
 		<< 'VM_ARCH=`uname -m`'; cr;
-		<< 'OSNAME=`uname -o`'; cr
+		<< 'OSNAME=`uname -s`'; cr

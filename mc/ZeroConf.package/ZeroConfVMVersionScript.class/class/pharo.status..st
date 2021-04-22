@@ -1,6 +1,6 @@
 instance creation
 pharo: version status: status 
 	^ self 
-		type: 'pharo' 
+		type: 'pharo'
 		release: version
 		status: status

@@ -1,6 +1,6 @@
 instance creation
 pharoS: version status: status 
 	^ self 
-		type: 'pharoS' 
+		type: 'pharo-stackvm'
 		release: version 
 		status: status
