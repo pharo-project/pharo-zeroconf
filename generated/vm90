@@ -70,11 +70,11 @@ else
     exit 1;
 fi
 VM_ARCH=`uname -m`
-OSNAME=`uname -o`
+OSNAME=`uname -s`
 
 
 # DOWNLOAD PHARO FOR 90 VM ======================================================
-VM_URL="${FILES_URL}/${VM_TYPE}-${OSNAME}-${VM_ARCH}-${VM_STATUS}.zip"
+VM_URL="${FILES_URL}/${VM_TYPE}-vm-${OSNAME}-${VM_ARCH}-${VM_STATUS}.zip"
 VM_DIR="pharo-vm"
 
 echoerr "Downloading the latest ${VM_TYPE}VM:"
