@@ -58,7 +58,7 @@ VM_ARCH=`uname -m`
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     OSNAME=Linux;;
-    Darwin*)    OSNAME=Mac;;
+    Darwin*)    OSNAME=Darwin;;
     CYGWIN*)    OSNAME=Windows;;
     MINGW*)     OSNAME=Windows;;
     *)          OSNAME="UNKNOWN:${unameOut}"
