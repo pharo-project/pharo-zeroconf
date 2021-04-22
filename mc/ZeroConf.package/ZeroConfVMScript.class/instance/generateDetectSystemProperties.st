@@ -2,6 +2,12 @@ script generation
 generateDetectSystemProperties
 	self 
 		<<== 'DETECT SYSTEM PROPERTIES';
-		generatePlatformTest;
 		<< 'VM_ARCH=`uname -m`'; cr;
-		<< 'OSNAME=`uname -s`'; cr
+		<< 'unameOut="$(uname -s)"'; cr;
+		<< 'case "${unameOut}" in'; cr;
+		<< '    Linux*)     OSNAME=Linux;;'; cr;
+		<< '    Darwin*)    OSNAME=Mac;;'; cr;
+		<< '    CYGWIN*)    OSNAME=Windows;;'; cr;
+		<< '    MINGW*)     OSNAME=Windows;;'; cr;
+		<< '    *)          OSNAME="UNKNOWN:${unameOut}"'; cr;
+		<< 'esac'; cr
