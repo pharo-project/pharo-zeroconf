@@ -47,7 +47,6 @@ FILES_URL="http://files.pharo.org/get-files/${VERSION}"
 
 # VM PROPERTIES =================================================================
 VM_TYPE="pharo"
-VM_ARCH=""
 VM_BINARY_NAME="Pharo"
 VM_BINARY_NAME_LINUX="pharo"
 VM_BINARY_NAME_WINDOWS="PharoConsole"
@@ -55,29 +54,19 @@ VM_STATUS="latest"
 
 
 # DETECT SYSTEM PROPERTIES ======================================================
-TMP_OS=`uname | tr "[:upper:]" "[:lower:]"`
-if [[ "{$TMP_OS}" = *darwin* ]]; then
-    OS="mac";
-elif [[ "{$TMP_OS}" = *linux* ]]; then
-    OS="linux";
-elif [[ "{$TMP_OS}" = *win* ]]; then
-    OS="win";
-elif [[ "{$TMP_OS}" = *mingw* ]]; then
-    OS="win";
-elif [[ "{$TMP_OS}" = *msys* ]]; then
-    OS="win";
-else
-    echo "Unsupported OS";
-    exit 1;
-fi
-
-if [ -z "$ARCHITECTURE" ] ; then
-    ARCHITECTURE=32;
-fi
+VM_ARCH=`uname -m`
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     OSNAME=Linux;;
+    Darwin*)    OSNAME=Darwin;;
+    CYGWIN*)    OSNAME=Windows;;
+    MINGW*)     OSNAME=Windows;;
+    *)          OSNAME="UNKNOWN:${unameOut}"
+esac
 
 
 # DOWNLOAD PHARO FOR 90 VM ======================================================
-VM_URL="${FILES_URL}/${VM_TYPE}${VM_ARCH}-${OS}-${VM_STATUS}.zip"
+VM_URL="${FILES_URL}/${VM_TYPE}-vm-${OSNAME}-${VM_ARCH}-${VM_STATUS}.zip"
 VM_DIR="pharo-vm"
 
 echoerr "Downloading the latest ${VM_TYPE}VM:"
@@ -89,11 +78,11 @@ $DOWNLOAD_TO$VM_DIR/vm.zip $VM_URL
 unzip -q $VM_DIR/vm.zip -d $VM_DIR
 rm -rf $VM_DIR/vm.zip
 
-if [ "$OS" == "win" ]; then
+if [ "$OSNAME" == "Windows" ]; then
     PHARO_VM=`find $VM_DIR -name ${VM_BINARY_NAME_WINDOWS}.exe`
-elif [ "$OS" == "mac" ]; then
+elif [ "$OSNAME" == "Darwin" ]; then
     PHARO_VM=`find $VM_DIR -name ${VM_BINARY_NAME}`
-elif [ "$OS" == "linux" ]; then
+elif [ "$OSNAME" == "Linux" ]; then
     PHARO_VM=`ls $VM_DIR/${VM_BINARY_NAME_LINUX}`
 fi
 
