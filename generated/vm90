@@ -54,7 +54,13 @@ VM_STATUS="stable"
 
 
 # DETECT SYSTEM PROPERTIES ======================================================
-VM_ARCH=`uname -m`
+vmArchOut="$(uname -m)"
+case "${vmArchOut}" in
+    x*)         VM_ARCH=x86_64;;
+    i*)         VM_ARCH=x86;;
+    arm*|ARM*)  VM_ARCH="${vmArchOut}";;
+    *)          VM_ARCH="UNKNOWN:${vmArchOut}";;
+esac
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     OSNAME=Linux;;

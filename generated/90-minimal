@@ -40,9 +40,10 @@ fi
 
 
 # RELEASE VERSION ===============================================================
+ARCH=`uname -m`
 VERSION="90"
 FILES_URL="http://files.pharo.org/get-files/${VERSION}"
-IMAGE_FILE_NAME="pharo-minimal"
+IMAGE_FILE_NAME="pharo-minimal-${ARCH}"
 
 
 # DOWNLOADING THE LATEST PHARO 90 IMAGE =========================================
