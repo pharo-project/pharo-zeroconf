@@ -5,7 +5,6 @@ generateDetectSystemProperties
 		<< 'vmArchOut="$(uname -m)"'; cr;
 		<< 'case "${vmArchOut}" in'; cr;
 		<< '    x*)         VM_ARCH=x86_64;;'; cr;
-		<< '    i*)         VM_ARCH=x86;;'; cr;
 		<< '    arm*|ARM*)  VM_ARCH="${vmArchOut}";;'; cr;
 		<< '    *)          VM_ARCH="UNKNOWN:${vmArchOut}";;'; cr;
 		<< 'esac'; cr;
