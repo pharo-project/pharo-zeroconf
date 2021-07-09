@@ -61,7 +61,7 @@ case "${ARCH}" in
     *)          OSNAME="UNKNOWN:${ARCH}"
 esac
 
-VM_ARCH=`${ARCH}`
+VM_ARCH=${ARCH}
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     OSNAME=Linux;;

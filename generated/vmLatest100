@@ -55,7 +55,7 @@ VM_STATUS="latest"
 
 # DETECT SYSTEM PROPERTIES ======================================================
 ARCH=`uname -m`
-VM_ARCH=`${ARCH}`
+VM_ARCH=${ARCH}
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     OSNAME=Linux;;
