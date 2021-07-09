@@ -4,6 +4,5 @@ combinedScripts
 		(self imageScripts 
 			select: #canBeCombined)
 			do: [ :each | 
-				((self vmScriptsVersion: each release)
-					select: #has32bit) 
+				(self vmScriptsVersion: each release)
 					do: [ :vm | stream nextPut: each, vm ] ] ]
