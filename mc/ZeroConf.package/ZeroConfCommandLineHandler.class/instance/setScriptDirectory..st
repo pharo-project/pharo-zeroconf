@@ -1,5 +1,5 @@
 accessing
 setScriptDirectory: script
-	script directory ifNil: [ 
+	script baseDirectory ifNil: [ 
 		script directory: self outputDirectory ].
 	^ script

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ZeroConfCurrentPlatform",
+	"category" : "ZeroConf",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ZeroConfExplicit32BitPlatform",
+	"type" : "normal"
+}

@@ -1,3 +1,4 @@
 accessing
 directory
-	^ directory
+
+	^ platform directoryFor: self
