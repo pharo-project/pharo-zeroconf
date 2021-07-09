@@ -57,7 +57,7 @@ VM_STATUS="latest"
 ARCH=`uname -m`
 # SEARCH FOR THE CORRESPONDING 32bit ARCHITECTURE ===============================
 case "${ARCH}" in
-    x86_64*)    ARCH=x86;;
+    x86_64*)    ARCH="x86";;
     *)          OSNAME="UNKNOWN:${ARCH}"
 esac
 
