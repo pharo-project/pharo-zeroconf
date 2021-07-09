@@ -1,3 +1,3 @@
 accessing
 baseUrl
-	^ baseUrl ifNil: [ self class baseUrl ]
+	^ platform baseUrlFor: self
