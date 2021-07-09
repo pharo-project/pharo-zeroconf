@@ -41,9 +41,15 @@ fi
 
 # RELEASE VERSION ===============================================================
 ARCH=`uname -m`
+# SEARCH FOR THE CORRESPONDING 64bit ARCHITECTURE ===============================
+case "${ARCH}" in
+    x86*)    ARCH=x86_64;;
+    *)       OSNAME="UNKNOWN:${ARCH}"
+esac
+
 VERSION="90"
 FILES_URL="http://files.pharo.org/get-files/${VERSION}"
-IMAGE_FILE_NAME="pharo-minimal-${ARCH}"
+IMAGE_FILE_NAME="pharoImage-${ARCH}"
 
 
 # DOWNLOADING THE LATEST PHARO 90 IMAGE =========================================
@@ -107,10 +113,10 @@ HTML_HELP=<<HTML_HELP
 <h1>Pharo Zeroconf Script</h1>
 <p>This script downloads the latest Pharo 90 Image.</p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/90-minimal">https://get.pharo.org/90-minimal</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/stable">https://get.pharo.org/stable</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/90-minimal">https://get.pharo.org/90-minimal</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/stable">https://get.pharo.org/stable</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>

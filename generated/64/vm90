@@ -55,6 +55,12 @@ VM_STATUS="stable"
 
 # DETECT SYSTEM PROPERTIES ======================================================
 ARCH=`uname -m`
+# SEARCH FOR THE CORRESPONDING 64bit ARCHITECTURE ===============================
+case "${ARCH}" in
+    x86*)    ARCH=x86_64;;
+    *)       OSNAME="UNKNOWN:${ARCH}"
+esac
+
 VM_ARCH=`${ARCH}`
 unameOut="$(uname -s)"
 case "${unameOut}" in
