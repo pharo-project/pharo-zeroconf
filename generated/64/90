@@ -113,10 +113,10 @@ HTML_HELP=<<HTML_HELP
 <h1>Pharo Zeroconf Script</h1>
 <p>This script downloads the latest Pharo 90 Image.</p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/90">https://get.pharo.org/90</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/64/90">https://get.pharo.org/64/90</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/90">https://get.pharo.org/90</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/64/90">https://get.pharo.org/64/90</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>

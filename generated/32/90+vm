@@ -46,9 +46,9 @@ fi
 
 # DOWNLOAD SUB-SCRIPTS ==========================================================
 # This script downloads the latest Pharo 90 Image. ------------------------------
-$DOWNLOAD https://get.pharo.org/90 | bash 
+$DOWNLOAD https://get.pharo.org/32/90 | bash 
 # This script downloads the stable Pharo VM for 90. -----------------------------
-$DOWNLOAD https://get.pharo.org/vm90 | bash 
+$DOWNLOAD https://get.pharo.org/32/vm90 | bash 
 
 
 # HTML HELP =====================================================================
@@ -83,10 +83,10 @@ HTML_HELP=<<HTML_HELP
 This script downloads the stable Pharo VM for 90.<br/>
 </p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/90+vm">https://get.pharo.org/90+vm</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/32/90+vm">https://get.pharo.org/32/90+vm</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/90+vm">https://get.pharo.org/90+vm</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/32/90+vm">https://get.pharo.org/32/90+vm</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>

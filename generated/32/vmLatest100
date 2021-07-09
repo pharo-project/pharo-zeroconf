@@ -176,10 +176,10 @@ HTML_HELP=<<HTML_HELP
 <h1>Pharo Zeroconf Script</h1>
 <p>This script downloads the latest Pharo VM for 100.</p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/vmLatest100">https://get.pharo.org/vmLatest100</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/32/vmLatest100">https://get.pharo.org/32/vmLatest100</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/vmLatest100">https://get.pharo.org/vmLatest100</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/32/vmLatest100">https://get.pharo.org/32/vmLatest100</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>pharo</td><td>Script to run the downloaded VM in headless mode</td></tr>
