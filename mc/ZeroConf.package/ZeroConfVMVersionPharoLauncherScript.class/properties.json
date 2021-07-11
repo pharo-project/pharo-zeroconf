@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "ChristopheDemarey 12/17/2018 21:12",
+	"super" : "ZeroConfVMVersionScript",
+	"category" : "ZeroConf-Unity",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ZeroConfVMVersionPharoLauncherScript",
+	"type" : "normal"
+}
