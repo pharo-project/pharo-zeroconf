@@ -1,3 +1,3 @@
 accessing
 winVmUrl
-	^'${FILES_URL}/${VM_TYPE}${VM_ARCH}-${OS}-${VM_STATUS}-signed.zip'
+	^'${FILES_URL}/${VM_TYPE}-vm-${OSNAME}-${VM_ARCH}-${VM_STATUS}-signed.zip'
