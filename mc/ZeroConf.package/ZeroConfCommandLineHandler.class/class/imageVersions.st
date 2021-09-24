@@ -1,3 +1,4 @@
 accessing
 imageVersions
-	^ #(80 70 61 60 50 40 30 20 14 13 12)
+
+	^ #(100 90)

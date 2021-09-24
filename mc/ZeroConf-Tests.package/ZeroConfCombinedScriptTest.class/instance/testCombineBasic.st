@@ -1,7 +1,7 @@
 tests
 testCombineBasic
 	| image vm combined |
-	image := ZeroConfPharoImageScript pharo30.
+	image := ZeroConfPharoImageScript pharo: '30'.
 	vm := ZeroConfVMScript pharo.
 	combined := image , vm.
 	

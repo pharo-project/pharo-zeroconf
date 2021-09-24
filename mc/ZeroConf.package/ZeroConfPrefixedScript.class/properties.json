@@ -6,8 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"prefixScripts",
-		"inlinePrefixScripts"
+		"prefixScripts"
 	],
 	"name" : "ZeroConfPrefixedScript",
 	"type" : "normal"

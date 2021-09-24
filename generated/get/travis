@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+sudo add-apt-repository ppa:pharo/stable
+sudo apt-get update
+sudo apt-get install pharo-vm-core:i386

@@ -1,0 +1,267 @@
+#!/usr/bin/env bash
+#<html><head><!--
+# The line above makes a fake HTML document out of this bash script
+
+#This zero conf script was generated from the sources found in:
+#	https://github.com/pharo-project/pharo-zeroconf
+
+# stop the script if a single command fails
+set -e
+
+# define an echo that only outputs to stderr
+echoerr() { echo "$@" 1>&2; }
+#  try to use curl if possible
+if [[ `which curl 2> /dev/null` ]]; then
+	DOWNLOAD="curl --silent --location --compressed ";
+	DOWNLOAD_TO="$DOWNLOAD --output ";
+elif [[ `which wget 2> /dev/null` ]]; then
+	DOWNLOAD_TO="wget --quiet --output-document=";
+	DOWNLOAD="$DOWNLOAD_TO-";
+else
+	echo "Please install curl or wget on your machine";
+	exit 1
+fi
+
+
+
+
+# ARGUMENT HANDLING =============================================================
+if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
+	echo "This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM for 80.
+
+The following artifacts are created:
+    Pharo.changes  A changes file for the Pharo Image
+    Pharo.image    A Pharo image, to be opened with the Pharo VM
+    pharo          Script to run the downloaded VM in headless mode
+    pharo-ui       Script to run the downloaded VM in UI mode
+    pharo-vm/      Directory containing the VM
+"
+	exit 0;
+elif [ $# -gt 0 ]; then
+	echo "--help is the only argument allowed"
+	exit 1;
+fi
+
+
+# DOWNLOAD SUB-SCRIPTS ==========================================================
+# This script downloads the latest Pharo 80 Image. ------------------------------
+$DOWNLOAD https://get.pharo.org/80 | bash 
+# This script downloads the stable Pharo VM for 80. -----------------------------
+$DOWNLOAD https://get.pharo.org/vm80 | bash 
+
+
+# HTML HELP =====================================================================
+HTML_HELP=<<HTML_HELP 
+-->
+<title>Pharo Zeroconf Script</title>
+<style>
+	BODY, TABLE { 
+		font-family: Arial;
+		line-height: 1.5em;
+	}
+	BODY { 
+		background-color: white;
+		margin-top: -1.5em;
+	}
+	TD { 
+		vertical-align: top;
+		padding: 0 1ex 0 0;
+	}
+	PRE, CODE { 
+		background-color: #EEE;
+		padding: 0.5ex 0.8ex;
+		border-radius: 0.5ex;
+	}
+	A { 
+		color: black;
+	}
+	</style>
+<body>
+<h1>Pharo Zeroconf Script</h1>
+<p>This script downloads the latest Pharo 80 Image.<br/>
+This script downloads the stable Pharo VM for 80.<br/>
+</p>
+<h2>Usage</h2>
+<code>curl <a href="https://get.pharo.org/">https://get.pharo.org</a> | bash </code>
+<br/>
+or if <code>curl</code> is not available: </br>
+<code>wget -O- <a href="https://get.pharo.org/">https://get.pharo.org</a> | bash </code>
+
+<h2>Artifacts</h2>
+<table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>
+<tr><td>Pharo.image</td><td>A Pharo image, to be opened with the Pharo VM</td></tr>
+<tr><td>pharo</td><td>Script to run the downloaded VM in headless mode</td></tr>
+<tr><td>pharo-ui</td><td>Script to run the downloaded VM in UI mode</td></tr>
+<tr><td>pharo-vm/</td><td>Directory containing the VM</td></tr></table>
+<h2>Pharo 64bit version</h2>
+Pharo 64bit versions can be found here: <a href="https://get.pharo.org/64">https://get.pharo.org/64</a><h2>Pharo Example</h2>
+<table>
+
+<tr>
+<td>Show the command line help:</td>
+<td><code>./pharo Pharo.image --help</code></td>
+</tr>
+
+<tr>			
+<td>List all command line handlers:</td>
+<td><code>./pharo Pharo.image --list</code></td>
+</tr>
+
+<tr>			
+<td>Evaluate an expression on the command line:</td>
+<td><code>./pharo Pharo.image eval "Class allInstances"</code></td>
+</tr>
+
+</table><h2>Other Scripts</h2>
+<table><tr><td><code><a href="https://get.pharo.org/stable">https://get.pharo.org/stable</a></code></td><td>This script downloads the latest Pharo 80 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/alpha">https://get.pharo.org/alpha</a></code></td><td>This script downloads the latest Pharo 90 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/90">https://get.pharo.org/90</a></code></td><td>This script downloads the latest Pharo 90 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/80">https://get.pharo.org/80</a></code></td><td>This script downloads the latest Pharo 80 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/70">https://get.pharo.org/70</a></code></td><td>This script downloads the latest Pharo 70 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/61">https://get.pharo.org/61</a></code></td><td>This script downloads the latest Pharo 61 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/60">https://get.pharo.org/60</a></code></td><td>This script downloads the latest Pharo 60 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/50">https://get.pharo.org/50</a></code></td><td>This script downloads the latest Pharo 50 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/40">https://get.pharo.org/40</a></code></td><td>This script downloads the latest Pharo 40 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/30">https://get.pharo.org/30</a></code></td><td>This script downloads the latest Pharo 30 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/20">https://get.pharo.org/20</a></code></td><td>This script downloads the latest Pharo 20 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/14">https://get.pharo.org/14</a></code></td><td>This script downloads the latest Pharo 14 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/13">https://get.pharo.org/13</a></code></td><td>This script downloads the latest Pharo 13 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/12">https://get.pharo.org/12</a></code></td><td>This script downloads the latest Pharo 12 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/90-minimal">https://get.pharo.org/90-minimal</a></code></td><td>This script downloads the latest Pharo 90 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/80-minimal">https://get.pharo.org/80-minimal</a></code></td><td>This script downloads the latest Pharo 80 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/70-minimal">https://get.pharo.org/70-minimal</a></code></td><td>This script downloads the latest Pharo 70 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/61-minimal">https://get.pharo.org/61-minimal</a></code></td><td>This script downloads the latest Pharo 61 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/60-minimal">https://get.pharo.org/60-minimal</a></code></td><td>This script downloads the latest Pharo 60 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/50-minimal">https://get.pharo.org/50-minimal</a></code></td><td>This script downloads the latest Pharo 50 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/40-minimal">https://get.pharo.org/40-minimal</a></code></td><td>This script downloads the latest Pharo 40 Image.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm90">https://get.pharo.org/vm90</a></code></td><td>This script downloads the stable Pharo VM for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmT90">https://get.pharo.org/vmT90</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmI90">https://get.pharo.org/vmI90</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmLatest90">https://get.pharo.org/vmLatest90</a></code></td><td>This script downloads the latest Pharo VM for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmTLatest90">https://get.pharo.org/vmTLatest90</a></code></td><td>This script downloads the latest Pharo VM (Threaded Heartbeat) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmILatest90">https://get.pharo.org/vmILatest90</a></code></td><td>This script downloads the latest Pharo VM (Timer Heartbeat) for 90.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm80">https://get.pharo.org/vm80</a></code></td><td>This script downloads the stable Pharo VM for 80.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmT80">https://get.pharo.org/vmT80</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 80.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmI80">https://get.pharo.org/vmI80</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 80.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm70">https://get.pharo.org/vm70</a></code></td><td>This script downloads the stable Pharo VM for 70.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmT70">https://get.pharo.org/vmT70</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 70.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmI70">https://get.pharo.org/vmI70</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 70.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm61">https://get.pharo.org/vm61</a></code></td><td>This script downloads the stable Pharo VM for 61.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmT61">https://get.pharo.org/vmT61</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 61.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmI61">https://get.pharo.org/vmI61</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 61.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm60">https://get.pharo.org/vm60</a></code></td><td>This script downloads the stable Pharo VM for 60.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmT60">https://get.pharo.org/vmT60</a></code></td><td>This script downloads the stable Pharo VM (Threaded Heartbeat) for 60.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vmI60">https://get.pharo.org/vmI60</a></code></td><td>This script downloads the stable Pharo VM (Timer Heartbeat) for 60.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm50">https://get.pharo.org/vm50</a></code></td><td>This script downloads the stable Pharo VM for 50.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm40">https://get.pharo.org/vm40</a></code></td><td>This script downloads the stable Pharo VM for 40.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm30">https://get.pharo.org/vm30</a></code></td><td>This script downloads the stable Pharo VM for 30.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm20">https://get.pharo.org/vm20</a></code></td><td>This script downloads the stable Pharo VM for 20.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm14">https://get.pharo.org/vm14</a></code></td><td>This script downloads the stable Pharo VM for 14.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm13">https://get.pharo.org/vm13</a></code></td><td>This script downloads the stable Pharo VM for 13.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/vm12">https://get.pharo.org/vm12</a></code></td><td>This script downloads the stable Pharo VM for 12.</td><tr>
+<tr><td><code><a href="https://get.pharo.org/stable+vm">https://get.pharo.org/stable+vm</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/stable+vmT">https://get.pharo.org/stable+vmT</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/stable+vmI">https://get.pharo.org/stable+vmI</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/alpha+vm">https://get.pharo.org/alpha+vm</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/alpha+vmT">https://get.pharo.org/alpha+vmT</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/alpha+vmI">https://get.pharo.org/alpha+vmI</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/alpha+vmLatest">https://get.pharo.org/alpha+vmLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/alpha+vmTLatest">https://get.pharo.org/alpha+vmTLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (Threaded Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/alpha+vmILatest">https://get.pharo.org/alpha+vmILatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (Timer Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/90+vm">https://get.pharo.org/90+vm</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/90+vmT">https://get.pharo.org/90+vmT</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/90+vmI">https://get.pharo.org/90+vmI</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/90+vmLatest">https://get.pharo.org/90+vmLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/90+vmTLatest">https://get.pharo.org/90+vmTLatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (Threaded Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/90+vmILatest">https://get.pharo.org/90+vmILatest</a></code></td><td>This script downloads the latest Pharo 90 Image.
+This script downloads the latest Pharo VM (Timer Heartbeat) for 90.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/80+vm">https://get.pharo.org/80+vm</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/80+vmT">https://get.pharo.org/80+vmT</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/80+vmI">https://get.pharo.org/80+vmI</a></code></td><td>This script downloads the latest Pharo 80 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 80.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/70+vm">https://get.pharo.org/70+vm</a></code></td><td>This script downloads the latest Pharo 70 Image.
+This script downloads the stable Pharo VM for 70.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/70+vmT">https://get.pharo.org/70+vmT</a></code></td><td>This script downloads the latest Pharo 70 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 70.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/70+vmI">https://get.pharo.org/70+vmI</a></code></td><td>This script downloads the latest Pharo 70 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 70.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/61+vm">https://get.pharo.org/61+vm</a></code></td><td>This script downloads the latest Pharo 61 Image.
+This script downloads the stable Pharo VM for 61.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/61+vmT">https://get.pharo.org/61+vmT</a></code></td><td>This script downloads the latest Pharo 61 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 61.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/61+vmI">https://get.pharo.org/61+vmI</a></code></td><td>This script downloads the latest Pharo 61 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 61.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/60+vm">https://get.pharo.org/60+vm</a></code></td><td>This script downloads the latest Pharo 60 Image.
+This script downloads the stable Pharo VM for 60.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/60+vmT">https://get.pharo.org/60+vmT</a></code></td><td>This script downloads the latest Pharo 60 Image.
+This script downloads the stable Pharo VM (Threaded Heartbeat) for 60.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/60+vmI">https://get.pharo.org/60+vmI</a></code></td><td>This script downloads the latest Pharo 60 Image.
+This script downloads the stable Pharo VM (Timer Heartbeat) for 60.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/50+vm">https://get.pharo.org/50+vm</a></code></td><td>This script downloads the latest Pharo 50 Image.
+This script downloads the stable Pharo VM for 50.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/40+vm">https://get.pharo.org/40+vm</a></code></td><td>This script downloads the latest Pharo 40 Image.
+This script downloads the stable Pharo VM for 40.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/30+vm">https://get.pharo.org/30+vm</a></code></td><td>This script downloads the latest Pharo 30 Image.
+This script downloads the stable Pharo VM for 30.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/20+vm">https://get.pharo.org/20+vm</a></code></td><td>This script downloads the latest Pharo 20 Image.
+This script downloads the stable Pharo VM for 20.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/14+vm">https://get.pharo.org/14+vm</a></code></td><td>This script downloads the latest Pharo 14 Image.
+This script downloads the stable Pharo VM for 14.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/13+vm">https://get.pharo.org/13+vm</a></code></td><td>This script downloads the latest Pharo 13 Image.
+This script downloads the stable Pharo VM for 13.
+</td><tr>
+<tr><td><code><a href="https://get.pharo.org/12+vm">https://get.pharo.org/12+vm</a></code></td><td>This script downloads the latest Pharo 12 Image.
+This script downloads the stable Pharo VM for 12.
+</td><tr></table>
+<!--
+HTML_HELP
+# --!></body></html>

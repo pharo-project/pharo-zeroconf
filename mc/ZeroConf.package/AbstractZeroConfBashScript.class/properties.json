@@ -15,7 +15,8 @@
 		"additionalHelp",
 		"additionalHtmlHelp",
 		"url",
-		"prefixingScript"
+		"prefixingScript",
+		"platform"
 	],
 	"name" : "AbstractZeroConfBashScript",
 	"type" : "normal"

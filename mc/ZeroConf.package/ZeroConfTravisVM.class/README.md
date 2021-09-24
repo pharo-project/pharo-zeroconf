@@ -1,1 +1,0 @@
-I generate a downloader script in bash for the given type of VM plus the additional installation to use this VM under the current ubuntu version used by travis.

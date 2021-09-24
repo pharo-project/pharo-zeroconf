@@ -1,4 +1,0 @@
-accessing
-binaryNameWindows
-
-	^ self binaryName

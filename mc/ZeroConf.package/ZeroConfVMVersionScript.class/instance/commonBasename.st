@@ -4,7 +4,6 @@ commonBasename
 	| base |
 	
 	base := self class basenameVM.
-	self isStack ifTrue: [ base := base, 'S' ].
 	self isLatest ifTrue: [ base := base, 'Latest' ].
 
 	^ base
