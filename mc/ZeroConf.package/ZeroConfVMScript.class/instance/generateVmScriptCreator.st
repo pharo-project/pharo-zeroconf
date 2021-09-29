@@ -21,12 +21,7 @@ set -f
 	
 	# only output the headless option if the VM_SCRIPT name does not include "ui"
 	if [[ "\{$VM_SCRIPT}" != *ui* ]]; then
-		# output the headless option, which varies under each platform
-		if [ "$OS" == "linux" ]; then
-		    echo -n " {1}nodisplay " >> $VM_SCRIPT
-		else
-		    echo -n " {1}headless" >> $VM_SCRIPT
-		fi
+		echo -n " {1}headless" >> $VM_SCRIPT
 	fi
 	
 	# forward all arguments unprocessed using $@
