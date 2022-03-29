@@ -27,8 +27,8 @@ fi
 
 # ARGUMENT HANDLING =============================================================
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-	echo "This script downloads the latest Pharo 90 Image.
-This script downloads the stable Pharo VM for 90.
+	echo "This script downloads the latest Pharo 100 Image.
+This script downloads the stable Pharo VM for 100.
 
 The following artifacts are created:
     Pharo.changes  A changes file for the Pharo Image
@@ -45,10 +45,10 @@ fi
 
 
 # DOWNLOAD SUB-SCRIPTS ==========================================================
-# This script downloads the latest Pharo 90 Image. ------------------------------
+# This script downloads the latest Pharo 100 Image. -----------------------------
 $DOWNLOAD https://get.pharo.org/32/stable | bash 
-# This script downloads the stable Pharo VM for 90. -----------------------------
-$DOWNLOAD https://get.pharo.org/32/vm90 | bash 
+# This script downloads the stable Pharo VM for 100. ----------------------------
+$DOWNLOAD https://get.pharo.org/32/vm100 | bash 
 
 
 # HTML HELP =====================================================================
@@ -79,8 +79,8 @@ HTML_HELP=<<HTML_HELP
 	</style>
 <body>
 <h1>Pharo Zeroconf Script</h1>
-<p>This script downloads the latest Pharo 90 Image.<br/>
-This script downloads the stable Pharo VM for 90.<br/>
+<p>This script downloads the latest Pharo 100 Image.<br/>
+This script downloads the stable Pharo VM for 100.<br/>
 </p>
 <h2>Usage</h2>
 <code>curl <a href="https://get.pharo.org/32/stable+vm">https://get.pharo.org/32/stable+vm</a> | bash </code>

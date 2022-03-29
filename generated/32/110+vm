@@ -27,8 +27,8 @@ fi
 
 # ARGUMENT HANDLING =============================================================
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-	echo "This script downloads the latest Pharo 100 Image.
-This script downloads the stable Pharo VM for 100.
+	echo "This script downloads the latest Pharo 110 Image.
+This script downloads the stable Pharo VM for 110.
 
 The following artifacts are created:
     Pharo.changes  A changes file for the Pharo Image
@@ -45,10 +45,10 @@ fi
 
 
 # DOWNLOAD SUB-SCRIPTS ==========================================================
-# This script downloads the latest Pharo 100 Image. -----------------------------
-$DOWNLOAD https://get.pharo.org/100 | bash 
-# This script downloads the stable Pharo VM for 100. ----------------------------
-$DOWNLOAD https://get.pharo.org/vm100 | bash 
+# This script downloads the latest Pharo 110 Image. -----------------------------
+$DOWNLOAD https://get.pharo.org/32/110 | bash 
+# This script downloads the stable Pharo VM for 110. ----------------------------
+$DOWNLOAD https://get.pharo.org/32/vm110 | bash 
 
 
 # HTML HELP =====================================================================
@@ -79,14 +79,14 @@ HTML_HELP=<<HTML_HELP
 	</style>
 <body>
 <h1>Pharo Zeroconf Script</h1>
-<p>This script downloads the latest Pharo 100 Image.<br/>
-This script downloads the stable Pharo VM for 100.<br/>
+<p>This script downloads the latest Pharo 110 Image.<br/>
+This script downloads the stable Pharo VM for 110.<br/>
 </p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/">https://get.pharo.org</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/32/110+vm">https://get.pharo.org/32/110+vm</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/">https://get.pharo.org</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/32/110+vm">https://get.pharo.org/32/110+vm</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>
@@ -94,26 +94,7 @@ or if <code>curl</code> is not available: </br>
 <tr><td>pharo</td><td>Script to run the downloaded VM in headless mode</td></tr>
 <tr><td>pharo-ui</td><td>Script to run the downloaded VM in UI mode</td></tr>
 <tr><td>pharo-vm/</td><td>Directory containing the VM</td></tr></table>
-<h2>Pharo Example</h2>
-<table>
 
-<tr>
-<td>Show the command line help:</td>
-<td><code>./pharo Pharo.image --help</code></td>
-</tr>
-
-<tr>			
-<td>List all command line handlers:</td>
-<td><code>./pharo Pharo.image --list</code></td>
-</tr>
-
-<tr>			
-<td>Evaluate an expression on the command line:</td>
-<td><code>./pharo Pharo.image eval "Class allInstances"</code></td>
-</tr>
-
-</table><h2>Other Versions</h2>
-<table><tr><td>Other versions are available in the form, where version=90,80,70...</td><td><code>curl https://get.pharo.org/[version]+vm | bash</code></td></tr><tr><td>Getting explicitly a 64bit or 32 bit version requires the 32 or 64 prefix</td><td><code>curl https://get.pharo.org/[32/64]/[version]+vm | bash</code></td></tr><tr><td>Older versions can be found at</td><td><a href="https://get.pharo.org/archive/80">https://get.pharo.org/archive/80</a></td></tr></table>
 <!--
 HTML_HELP
 # --!></body></html>
