@@ -27,7 +27,7 @@ fi
 
 # ARGUMENT HANDLING =============================================================
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-	echo "This script downloads the latest Pharo 100 Image.
+	echo "This script downloads the latest Pharo 120 Image.
 The following artifacts are created:
     Pharo.changes  A changes file for the Pharo Image
     Pharo.image    A Pharo image, to be opened with the Pharo VM
@@ -47,15 +47,15 @@ case "${ARCH}" in
     *)       OSNAME="UNKNOWN:${ARCH}"
 esac
 
-VERSION="100"
+VERSION="120"
 FILES_URL="http://files.pharo.org/get-files/${VERSION}"
 IMAGE_FILE_NAME="pharoImage-${ARCH}"
 
 
-# DOWNLOADING THE LATEST PHARO 100 IMAGE ========================================
+# DOWNLOADING THE LATEST PHARO 120 IMAGE ========================================
 IMAGE_URL="${FILES_URL}/${IMAGE_FILE_NAME}.zip"
 
-echoerr "Downloading the latest 100 Image:"
+echoerr "Downloading the latest 120 Image:"
 echoerr "    $IMAGE_URL"
 
 TMP_DIR=`mktemp -d image.XXXXXX`
@@ -111,7 +111,7 @@ HTML_HELP=<<HTML_HELP
 	</style>
 <body>
 <h1>Pharo Zeroconf Script</h1>
-<p>This script downloads the latest Pharo 100 Image.</p>
+<p>This script downloads the latest Pharo 120 Image.</p>
 <h2>Usage</h2>
 <code>curl <a href="https://get.pharo.org/64/alpha">https://get.pharo.org/64/alpha</a> | bash </code>
 <br/>
