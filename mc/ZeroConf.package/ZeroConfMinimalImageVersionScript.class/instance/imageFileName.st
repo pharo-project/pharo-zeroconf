@@ -1,3 +1,0 @@
-accessing
-imageFileName
-	^ 'pharo-minimal'

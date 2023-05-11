@@ -1,1 +1,0 @@
-I generate a simple script which downloads a Pharo image.

@@ -1,4 +1,0 @@
-accessing
-stableVersion
- 
-	^ 100

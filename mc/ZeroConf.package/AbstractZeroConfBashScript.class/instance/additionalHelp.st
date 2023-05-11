@@ -1,3 +1,0 @@
-accessing
-additionalHelp
-	^ additionalHelp ifNil: [ '' ]

@@ -1,1 +1,0 @@
-I test the default Image zeroconf scripts.

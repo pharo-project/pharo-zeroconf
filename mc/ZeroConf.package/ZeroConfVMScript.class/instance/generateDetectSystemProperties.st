@@ -1,4 +1,0 @@
-script generation
-generateDetectSystemProperties
-	
-	platform generateOperatingSystemDetectionOn: self

@@ -1,3 +1,0 @@
-accessing
-defaultDirectory
-	^ FileLocator workingDirectory

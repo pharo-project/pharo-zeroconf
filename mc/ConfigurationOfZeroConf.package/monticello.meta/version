@@ -1,2 +1,0 @@
-(name 'ConfigurationOfZeroConf-PeterUhnak.2' message 'Added v1.2 containing only ZeroConf without Tests and OSProcess.' id '1b648afe-dfe5-47de-be1c-fa1696db8d95' date '24 May 2016' time '6:01:11.94907 pm' author 'PeterUhnak' ancestors ((name 'ConfigurationOfZeroConf-EstebanLorenzano.1' message '- renamed repository to mc
-' id '919ec2e2-5938-5274-85e4-bc159351113d' date '24 April 2014' time '3:50:17 pm' author 'EstebanLorenzano' ancestors () stepChildren ())) stepChildren ())

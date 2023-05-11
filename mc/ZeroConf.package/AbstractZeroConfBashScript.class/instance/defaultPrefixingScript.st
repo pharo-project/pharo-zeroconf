@@ -1,3 +1,0 @@
-accessing
-defaultPrefixingScript
-	^ ZeroConfPrefixedScript

@@ -1,3 +1,0 @@
-accessing
-prefixScripts
-	^ prefixScripts

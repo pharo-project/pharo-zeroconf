@@ -1,1 +1,0 @@
-I test the default combined VM and Image zeroconf scripts.
