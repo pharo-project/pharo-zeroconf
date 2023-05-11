@@ -12,13 +12,13 @@ Class {
 	#instVars : [
 		'outputDirectory'
 	],
-	#category : 'ZeroConf'
+	#category : #ZeroConf
 }
 
 { #category : #accessing }
 ZeroConfCommandLineHandler class >> alphaVersion [
  
-	^ 110
+	^ 120
 ]
 
 { #category : #accessing }
@@ -63,13 +63,13 @@ ZeroConfCommandLineHandler class >> imageVersions [
 { #category : #accessing }
 ZeroConfCommandLineHandler class >> stable64Version [ 
 
-	^ 100
+	^ 110
 ]
 
 { #category : #accessing }
 ZeroConfCommandLineHandler class >> stableVersion [
  
-	^ 100
+	^ 110
 ]
 
 { #category : #private }
