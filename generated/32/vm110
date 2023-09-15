@@ -66,8 +66,7 @@ unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     OSNAME=Linux;;
     Darwin*)    OSNAME=Darwin;;
-    CYGWIN*)    OSNAME=Windows;;
-    MINGW*)     OSNAME=Windows;;
+    MSYS*|CYGWIN|MINGW*)     OSNAME=Windows;;
     *)          OSNAME="UNKNOWN:${unameOut}"
 esac
 
