@@ -36,7 +36,7 @@ ZeroConfCurrentPlatform >> generateOperatingSystemDetectionOn: aStream [
 		<< 'case "${unameOut}" in'; cr;
 		<< '    Linux*)     OSNAME=Linux;;'; cr;
 		<< '    Darwin*)    OSNAME=Darwin;;'; cr;
-		<< '    MSYS*|CYGWIN|MINGW*)     OSNAME=Windows;;'; cr;
+		<< '    MSYS*|CYGWIN*|MINGW*)     OSNAME=Windows;;'; cr;
 		<< '    *)          OSNAME="UNKNOWN:${unameOut}"'; cr;
 		<< 'esac'; cr
 ]
