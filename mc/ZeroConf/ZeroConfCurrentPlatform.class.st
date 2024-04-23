@@ -1,30 +1,31 @@
 Class {
-	#name : #ZeroConfCurrentPlatform,
-	#superclass : #Object,
-	#category : #ZeroConf
+	#name : 'ZeroConfCurrentPlatform',
+	#superclass : 'Object',
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfCurrentPlatform >> baseUrlFor: aScript [
 
 	"Default scripts are hosted in the root"
 	^ aScript basicBaseUrl
 ]
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfCurrentPlatform >> directoryFor: aScript [
 
 	"Default scripts are written in the root"
 	^ aScript baseDirectory
 ]
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfCurrentPlatform >> generateArchitectureDetectionOn: aStream [
 
 	aStream << 'ARCH=`uname -m`'
 ]
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfCurrentPlatform >> generateOperatingSystemDetectionOn: aStream [
 
 	aStream <<== 'DETECT SYSTEM PROPERTIES'.

@@ -7,40 +7,41 @@ Description:
 I generate zeroconf commandline scripts next to the current image.
 "
 Class {
-	#name : #ZeroConfCommandLineHandler,
-	#superclass : #CommandLineHandler,
+	#name : 'ZeroConfCommandLineHandler',
+	#superclass : 'CommandLineHandler',
 	#instVars : [
 		'outputDirectory'
 	],
-	#category : #ZeroConf
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler class >> alphaVersion [
  
-	^ 120
+	^ 130
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler class >> commandName [
 
 	^ 'zeroconf'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler class >> description [
 
 	^ 'Generate Pharo zeroconf bash scripts'
 ]
 
-{ #category : #helper }
+{ #category : 'helper' }
 ZeroConfCommandLineHandler class >> generate [
 	<script>
 
 	self generateInDirectory: (FileLocator imageDirectory / 'out') asFileReference
 ]
 
-{ #category : #helper }
+{ #category : 'helper' }
 ZeroConfCommandLineHandler class >> generateInDirectory: aReference [
 
 	self new
@@ -48,37 +49,37 @@ ZeroConfCommandLineHandler class >> generateInDirectory: aReference [
 		generateScripts
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler class >> image64Versions [
 
-	^ #(120 110 100 90 80 70 61 60)
+	^ #(130 120 110 100 90 80 70 61 60)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler class >> imageVersions [
 
-	^ #(120 110 100 90)
+	^ #(130 120 110 100 90)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler class >> stable64Version [ 
 
-	^ 110
+	^ 120
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler class >> stableVersion [
  
-	^ 110
+	^ 120
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ZeroConfCommandLineHandler class >> subdir64 [
 	"subdirectory for 64bits"
 	^ '64'
 ]
 
-{ #category : #activation }
+{ #category : 'activation' }
 ZeroConfCommandLineHandler >> activate [
 	self activateHelp
 		ifTrue: [ ^ self ].
@@ -93,12 +94,12 @@ ZeroConfCommandLineHandler >> activate [
 		exitSuccess
 ]
 
-{ #category : #'actions testing' }
+{ #category : 'actions testing' }
 ZeroConfCommandLineHandler >> cleanUpAfterScript: aScript [
 	self testDirectory deleteAllChildren
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> combinedScripts [
 	^ Array streamContents: [ :stream |
 		(self imageScripts 
@@ -108,13 +109,13 @@ ZeroConfCommandLineHandler >> combinedScripts [
 					do: [ :vm | stream nextPut: each, vm ] ] ]
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> defaultScript [
 	^ (ZeroConfImageVersionScript pharo: self class stableVersion), 
 	  (ZeroConfVMVersionScript pharo: self class stableVersion status: #stable) 
 ]
 
-{ #category : #'actions testing' }
+{ #category : 'actions testing' }
 ZeroConfCommandLineHandler >> ensureEmptyTestDirectory [
 	self testDirectory exists
 		ifFalse: [ ^ self testDirectory ensureDirectory ].
@@ -126,7 +127,7 @@ ZeroConfCommandLineHandler >> ensureEmptyTestDirectory [
 		ifTrue: [ ^ self exitFailure: 'Test output directory ', self testDirectory fullName, ' is not empty.' ].
 ]
 
-{ #category : #'actions generating' }
+{ #category : 'actions generating' }
 ZeroConfCommandLineHandler >> generate: script [ 
 	self setScriptDirectory: script.
 	script directory ensureCreateDirectory.
@@ -137,23 +138,23 @@ ZeroConfCommandLineHandler >> generate: script [
 		generate.
 ]
 
-{ #category : #'actions generating' }
+{ #category : 'actions generating' }
 ZeroConfCommandLineHandler >> generateScripts [
 	self scripts do: [ :script | self generate: script ].
 	self generate: self indexScript
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> imageScripts [
 	^ self symbolicImageScripts, self numericImageScripts, self minimalScripts
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler >> imageVersions [
 	^ self class imageVersions
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> indexScript [
 	"the index.html is a special script that downloads the current stable release of Pharo with the VM.
 	Additionally it has a complete list of exported scripts in the html help"
@@ -168,7 +169,7 @@ ZeroConfCommandLineHandler >> indexScript [
 	^ indexScript.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler >> indexScriptExamplesHtmlOn: s [ 
 	s << '<h2>Pharo Example</h2>'; cr;
 	<< '<table>
@@ -191,20 +192,20 @@ ZeroConfCommandLineHandler >> indexScriptExamplesHtmlOn: s [
 </table>'.
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> minimalScripts [
 	^ (self imageVersions 
 		select: [ :each | ZeroConfMinimalImageVersionScript canBeGenerated: each ]) 
 		collect: [ :each | ZeroConfMinimalImageVersionScript pharo: each ]
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> numericImageScripts [
 	^ self imageVersions collect: [ :version|
 		ZeroConfImageVersionScript pharo: version ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler >> otherScriptsHtmlOn: stream [
 	stream
 		<< '<h2>Other Versions</h2>'; cr;
@@ -223,7 +224,7 @@ ZeroConfCommandLineHandler >> otherScriptsHtmlOn: stream [
 	stream << '</table>'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler >> outputDirectory [
 	^ outputDirectory ifNil: [ 
 		outputDirectory := (self hasOption: 'output')
@@ -231,12 +232,12 @@ ZeroConfCommandLineHandler >> outputDirectory [
 			ifFalse: [ FileSystem workingDirectory ]]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler >> outputDirectory: anOutputDirectory [
 	outputDirectory := anOutputDirectory
 ]
 
-{ #category : #'actions testing' }
+{ #category : 'actions testing' }
 ZeroConfCommandLineHandler >> printTestStartOfScript: aScript [
 	| message |
 	message := 'Testing ', aScript file fullName.
@@ -245,7 +246,7 @@ ZeroConfCommandLineHandler >> printTestStartOfScript: aScript [
 		yellow: ('' padLeftTo: message size with: $=); lf.
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> scripts [
 	"The base scripts work by looking at the current architecture.
 	Generate scripts that explicitly search for the corresponding 32 and 64 bit versions"
@@ -256,14 +257,14 @@ ZeroConfCommandLineHandler >> scripts [
 	^ baseScripts
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler >> setScriptDirectory: script [
 	script baseDirectory ifNil: [ 
 		script directory: self outputDirectory ].
 	^ script
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> symbolicImageScripts [
 	"manually mark a stable and an unstable alpha release"
 	^ { 
@@ -275,7 +276,7 @@ ZeroConfCommandLineHandler >> symbolicImageScripts [
 			yourself. }
 ]
 
-{ #category : #'actions testing' }
+{ #category : 'actions testing' }
 ZeroConfCommandLineHandler >> test: aScript [	
 	self printTestStartOfScript: aScript.
 	
@@ -286,12 +287,12 @@ ZeroConfCommandLineHandler >> test: aScript [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler >> testDirectory [
 	^ self outputDirectory / 'test'
 ]
 
-{ #category : #'actions testing' }
+{ #category : 'actions testing' }
 ZeroConfCommandLineHandler >> testScripts [	
 	self 
 		ensureEmptyTestDirectory.
@@ -302,18 +303,18 @@ ZeroConfCommandLineHandler >> testScripts [
 	self test: self indexScript.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCommandLineHandler >> testTimeout [
 	"Timeout used when testing scripts. Each script is guaranteed only this much time before it is aborted."
 	^ 30 seconds
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> vmScripts [
 	^ self imageVersions flatCollect: [ :each | self vmScriptsVersion: each ]
 ]
 
-{ #category : #'accessing scripts' }
+{ #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> vmScriptsVersion: version [
 	| scripts |
 	

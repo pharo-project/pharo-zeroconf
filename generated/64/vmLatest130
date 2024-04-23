@@ -27,7 +27,7 @@ fi
 
 # ARGUMENT HANDLING =============================================================
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-	echo "This script downloads the latest Pharo VM for 120.
+	echo "This script downloads the latest Pharo VM for 130.
 The following artifacts are created:
     pharo      Script to run the downloaded VM in headless mode
     pharo-ui   Script to run the downloaded VM in UI mode
@@ -41,7 +41,7 @@ fi
 
 
 # RELEASE VERSION ===============================================================
-VERSION="120"
+VERSION="130"
 FILES_URL="http://files.pharo.org/get-files/${VERSION}"
 
 
@@ -71,7 +71,7 @@ case "${unameOut}" in
 esac
 
 
-# DOWNLOAD PHARO FOR 120 VM =====================================================
+# DOWNLOAD PHARO FOR 130 VM =====================================================
 VM_URL="${FILES_URL}/${VM_TYPE}-vm-${OSNAME}-${VM_ARCH}-${VM_STATUS}.zip"
 VM_DIR="pharo-vm"
 
@@ -173,12 +173,12 @@ HTML_HELP=<<HTML_HELP
 	</style>
 <body>
 <h1>Pharo Zeroconf Script</h1>
-<p>This script downloads the latest Pharo VM for 120.</p>
+<p>This script downloads the latest Pharo VM for 130.</p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/64/vmLatest120">https://get.pharo.org/64/vmLatest120</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/64/vmLatest130">https://get.pharo.org/64/vmLatest130</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/64/vmLatest120">https://get.pharo.org/64/vmLatest120</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/64/vmLatest130">https://get.pharo.org/64/vmLatest130</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>pharo</td><td>Script to run the downloaded VM in headless mode</td></tr>

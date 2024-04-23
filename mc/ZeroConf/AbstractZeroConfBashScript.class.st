@@ -3,8 +3,8 @@ I am an abstract bash script creator providing helper methods to create zeroconf
 See my subclasses for concrete script generators that download images and vms.
 "
 Class {
-	#name : #AbstractZeroConfBashScript,
-	#superclass : #Object,
+	#name : 'AbstractZeroConfBashScript',
+	#superclass : 'Object',
 	#instVars : [
 		'directory',
 		'baseUrl',
@@ -18,35 +18,36 @@ Class {
 		'prefixingScript',
 		'platform'
 	],
-	#category : 'ZeroConf'
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript class >> baseUrl [
 	^ 'https://get.pharo.org' asZnUrl
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript class >> fileBaseUrl [
 	^ 'https://files.pharo.org' asZnUrl
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 AbstractZeroConfBashScript >> , otherZeroConf [
 	^ otherZeroConf combinedWith: self
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 AbstractZeroConfBashScript >> / otherZeroConf [
 	^ otherZeroConf prefixedWith: self
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> << aString [
 	outputStream << aString
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> <<-- aString [
 	"Add aString as separator to the output script, the following line would be the output of `self <<-- 'foo'`:
 	# foo ---------------------------------------------------------------------------"
@@ -56,7 +57,7 @@ AbstractZeroConfBashScript >> <<-- aString [
 	self cr.
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> <<== aString [
 	"Add aString as separator to the output script, the following line would be the output of `self <<== 'foo'`:
 	# foo =========================================================================== "
@@ -66,17 +67,17 @@ AbstractZeroConfBashScript >> <<== aString [
 	self cr.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> additionalHelp [
 	^ additionalHelp ifNil: [ '' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> additionalHelp: aString [
 	additionalHelp := aString.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> additionalHtmlHelp [
 	^ additionalHtmlHelp ifNil: [
 		self additionalHelp 
@@ -84,17 +85,17 @@ AbstractZeroConfBashScript >> additionalHtmlHelp [
 			copyReplaceAll: String lf with: ('<br/>', String lf) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> additionalHtmlHelp: aString [
 	additionalHtmlHelp := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> artifact [
 	^ self artifactDescription keys
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> artifactDescription [
 	"return a dictionary with 
 		key:    Artifact name
@@ -103,137 +104,137 @@ AbstractZeroConfBashScript >> artifactDescription [
 	^ self shouldBeImplemented 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> artifacts [
 	^ self artifactDescription keys
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> baseDirectory [
 
 	^ directory
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> baseUrl [
 	^ platform baseUrlFor: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> baseUrl: anUrl [
 	baseUrl := anUrl
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> basename [
 	^ basename ifNil: [ self defaultBasename ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> basename: aString [
 	basename := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> basenameForCombinedIn: script [ 
 	^ self basename
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> basicBaseUrl [
 	^ baseUrl ifNil: [ self class baseUrl ]
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 AbstractZeroConfBashScript >> combinedWith: otherScript [
 	^ (self combiningScript with: self), otherScript
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 AbstractZeroConfBashScript >> combinedWithAll: combinedScripts [
 	^ (self combiningScript with: self)
 		addAll: combinedScripts scripts;
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> combiningScript [
 	^ combiningScript ifNil: [ self defaultCombiningScript ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> combiningScript: abObject [
 	combiningScript := abObject
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> cr [
 	outputStream cr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> defaultBasename [
 	^ self subclassResponsibility 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> defaultCombiningScript [
 	^ ZeroConfCombinedScript
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> defaultDirectory [
 	^ FileLocator workingDirectory
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> defaultPrefixingScript [
 	^ ZeroConfPrefixedScript
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> description [
 	"A small description of what this script does"
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> directory [
 
 	^ platform directoryFor: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> directory: aFileReference [
 	directory := aFileReference
 ]
 
-{ #category : #'file creation' }
+{ #category : 'file creation' }
 AbstractZeroConfBashScript >> ensureDelete [
 	self file ensureDelete
 ]
 
-{ #category : #utility }
+{ #category : 'utility' }
 AbstractZeroConfBashScript >> exitFailure: aMessage [ 
 	Exit signalFailure: aMessage 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> file [
 	^ self directory / self basename
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> fileBaseUrl [
 	^ fileBaseUrl ifNil: [ self class fileBaseUrl ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> fileBaseUrl: anUrl [
 	fileBaseUrl := anUrl
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 AbstractZeroConfBashScript >> for32Bits [
 
 	^ self copy
@@ -241,7 +242,7 @@ AbstractZeroConfBashScript >> for32Bits [
 		yourself
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 AbstractZeroConfBashScript >> for64Bits [
 
 	^ self copy
@@ -249,7 +250,7 @@ AbstractZeroConfBashScript >> for64Bits [
 		yourself
 ]
 
-{ #category : #'script generation html' }
+{ #category : 'script generation html' }
 AbstractZeroConfBashScript >> formattedUrl [
 	"Return a formatted url where $+ is not urlencoded"
 	| pathString |
@@ -262,7 +263,7 @@ AbstractZeroConfBashScript >> formattedUrl [
 			ifFalse: [ s << pathString ]]
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generate [
 	self openOutputStream.
 	self 
@@ -274,7 +275,7 @@ AbstractZeroConfBashScript >> generate [
 	outputStream close.
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateArtifactsDescription [
 	| artifactDescription artifacts maxArtifactNameSize |
 	artifactDescription := self artifactDescription.
@@ -292,26 +293,26 @@ AbstractZeroConfBashScript >> generateArtifactsDescription [
 		separatedBy: [ self cr ]
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateBashSettings [
 	self 
 		<< '# stop the script if a single command fails'; cr;
 		<< 'set -e'; cr
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateBody [
 	"generate the script body, subclasses put their custom content here"
 	self subclassResponsibility
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateBodyOn: aStream [
 	self outputStream: aStream.
 	^ self generateBody.
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateCurlWgetDetect [
 	self 
 		<< '#  try to use curl if possible'; cr;
@@ -327,14 +328,14 @@ else
 fi'; cr
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateDownloadFor: script [
 	self
 		<<-- script description; 
 		<< '$DOWNLOAD '; print: script url; << ' | bash '; cr.
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateHeader [
 	self << '#!/usr/bin/env bash'; cr.
 	self needsHtmlHelp
@@ -344,7 +345,7 @@ AbstractZeroConfBashScript >> generateHeader [
 		generateHelperMethods.
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateHelp [
 	self 
 		<<== 'ARGUMENT HANDLING';
@@ -359,7 +360,7 @@ AbstractZeroConfBashScript >> generateHelp [
 		<< 'fi'; cr
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateHelpMessage [
 	self
 		<< self description; cr; 
@@ -368,7 +369,7 @@ AbstractZeroConfBashScript >> generateHelpMessage [
 		<< self additionalHelp
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 AbstractZeroConfBashScript >> generateHelperMethods [
 	self 
 		<< '# define an echo that only outputs to stderr'; cr;
@@ -376,7 +377,7 @@ AbstractZeroConfBashScript >> generateHelperMethods [
 		generateCurlWgetDetect; cr; cr
 ]
 
-{ #category : #'script generation html' }
+{ #category : 'script generation html' }
 AbstractZeroConfBashScript >> generateHtmlArtifactDescription [
 	
 	| artifactDescription |
@@ -396,14 +397,14 @@ AbstractZeroConfBashScript >> generateHtmlArtifactDescription [
 	self << '</table>'
 ]
 
-{ #category : #'script generation html' }
+{ #category : 'script generation html' }
 AbstractZeroConfBashScript >> generateHtmlDownloadUsing: aCommandString [
 	self 
 		<< '<code>'; << aCommandString; << '<a href="'; print: self url; << '">';
 		<< self formattedUrl; << '</a> | bash </code>'; cr
 ]
 
-{ #category : #'script generation html' }
+{ #category : 'script generation html' }
 AbstractZeroConfBashScript >> generateHtmlHeader [
 	self 
 		<< '#<html><head><!--'; cr;
@@ -415,7 +416,7 @@ AbstractZeroConfBashScript >> generateHtmlHeader [
 
 ]
 
-{ #category : #'script generation html' }
+{ #category : 'script generation html' }
 AbstractZeroConfBashScript >> generateHtmlHelp [
 	self 
 		<<== 'HTML HELP';
@@ -429,7 +430,7 @@ AbstractZeroConfBashScript >> generateHtmlHelp [
 		<< '# --!></body></html>'
 ]
 
-{ #category : #'script generation html' }
+{ #category : 'script generation html' }
 AbstractZeroConfBashScript >> generateHtmlHelpBody [
 	self 
 		<< '<h1>'; << self htmlTitle; << '</h1>'; cr;
@@ -444,7 +445,7 @@ AbstractZeroConfBashScript >> generateHtmlHelpBody [
 		<< self additionalHtmlHelp
 ]
 
-{ #category : #'script generation html' }
+{ #category : 'script generation html' }
 AbstractZeroConfBashScript >> generateHtmlStyle [
 	self << '
 	BODY, TABLE { 
@@ -470,66 +471,66 @@ AbstractZeroConfBashScript >> generateHtmlStyle [
 	'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 AbstractZeroConfBashScript >> hasBasename [
 	^ self basename isNotNil and: [ self basename isNotEmpty ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> helpText [
 	"return the default help text for bash"
 	^ self subclassResponsibility 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> htmlDescription [
 	^ self description
 		copyReplaceAll: String cr with: '<br/>',String cr 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> htmlTitle [
 	^ 'Pharo Zeroconf Script'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 AbstractZeroConfBashScript >> initialize [
 
 	super initialize.
 	platform := ZeroConfCurrentPlatform new.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 AbstractZeroConfBashScript >> isCombined [
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 AbstractZeroConfBashScript >> isImage [
 	^ false
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> lf [ 
 	outputStream lf
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 AbstractZeroConfBashScript >> needsHtmlHelp [
 	^ true
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> nextPut: anObject [
 	outputStream nextPut: anObject
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> nextPutAll: anObject [
 	outputStream nextPutAll: anObject
 ]
 
-{ #category : #'file creation' }
+{ #category : 'file creation' }
 AbstractZeroConfBashScript >> openOutputStream [
 	self directory ensureCreateDirectory.
 	
@@ -538,65 +539,65 @@ AbstractZeroConfBashScript >> openOutputStream [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> outputStream [
 	^ outputStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> outputStream: aStream [
 	outputStream := aStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> platform: aPlatform [ 
 	platform := aPlatform
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 AbstractZeroConfBashScript >> prefixedWith: otherScript [
 	^ (self prefixingScript withPrefix: otherScript) / self
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 AbstractZeroConfBashScript >> prefixedWithAll: prefixedScript [
 	^ (self prefixingScript with: self)
 		addAllPrefix: prefixedScript prefixScripts;
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> prefixingScript [
 	^ prefixingScript ifNil: [ self defaultPrefixingScript ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> prefixingScript: abObject [
 	prefixingScript := abObject
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> print: anObject [
 	outputStream print: anObject
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> store: anObject [
 	outputStream store: anObject
 ]
 
-{ #category : #'stream delegating' }
+{ #category : 'stream delegating' }
 AbstractZeroConfBashScript >> tab [
 	outputStream tab
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> url [
 	"Return the URL of the location of this script"
 	^ url ifNil: [ self baseUrl / self basename ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AbstractZeroConfBashScript >> url: aUrl [
 	url := aUrl asZnUrl
 ]

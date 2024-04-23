@@ -27,8 +27,8 @@ fi
 
 # ARGUMENT HANDLING =============================================================
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-	echo "This script downloads the latest Pharo 100 Image.
-This script downloads the latest Pharo VM for 100.
+	echo "This script downloads the latest Pharo 130 Image.
+This script downloads the stable Pharo VM for 130.
 
 The following artifacts are created:
     Pharo.changes  A changes file for the Pharo Image
@@ -45,10 +45,10 @@ fi
 
 
 # DOWNLOAD SUB-SCRIPTS ==========================================================
-# This script downloads the latest Pharo 100 Image. -----------------------------
-$DOWNLOAD https://get.pharo.org/32/100 | bash 
-# This script downloads the latest Pharo VM for 100. ----------------------------
-$DOWNLOAD https://get.pharo.org/32/vmLatest100 | bash 
+# This script downloads the latest Pharo 130 Image. -----------------------------
+$DOWNLOAD https://get.pharo.org/64/130 | bash 
+# This script downloads the stable Pharo VM for 130. ----------------------------
+$DOWNLOAD https://get.pharo.org/64/vm130 | bash 
 
 
 # HTML HELP =====================================================================
@@ -79,14 +79,14 @@ HTML_HELP=<<HTML_HELP
 	</style>
 <body>
 <h1>Pharo Zeroconf Script</h1>
-<p>This script downloads the latest Pharo 100 Image.<br/>
-This script downloads the latest Pharo VM for 100.<br/>
+<p>This script downloads the latest Pharo 130 Image.<br/>
+This script downloads the stable Pharo VM for 130.<br/>
 </p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/32/100+vmLatest">https://get.pharo.org/32/100+vmLatest</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/64/130+vm">https://get.pharo.org/64/130+vm</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/32/100+vmLatest">https://get.pharo.org/32/100+vmLatest</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/64/130+vm">https://get.pharo.org/64/130+vm</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>

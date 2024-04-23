@@ -9,22 +9,23 @@ Example:
 Then the output script is in `scriptA basename / scriptB basename, '.sh'` and the final script will have both the contents of `scriptA` and `scriptB`
 "
 Class {
-	#name : #ZeroConfPrefixedScript,
-	#superclass : #ZeroConfCombinedScript,
+	#name : 'ZeroConfPrefixedScript',
+	#superclass : 'ZeroConfCombinedScript',
 	#instVars : [
 		'prefixScripts'
 	],
-	#category : 'ZeroConf'
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfPrefixedScript class >> withPrefix: aScript [
 	^ self new
 		addPrefix: aScript;
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfPrefixedScript class >> withPrefix: aScript with: anotherScript [
 	^ self new
 		addPrefix: aScript;
@@ -32,22 +33,22 @@ ZeroConfPrefixedScript class >> withPrefix: aScript with: anotherScript [
 		yourself
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 ZeroConfPrefixedScript >> / otherZeroConf [
 	^ otherZeroConf prefixedWithAll: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfPrefixedScript >> addAllPrefix: moreScripts [
 	^ prefixScripts addAll: moreScripts
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfPrefixedScript >> addPrefix: script [
 	^ prefixScripts add: script
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfPrefixedScript >> defaultDirectory [
 	| fileReference |
 	fileReference := FileLocator workingDirectory.
@@ -56,7 +57,7 @@ ZeroConfPrefixedScript >> defaultDirectory [
 	^ fileReference
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 ZeroConfPrefixedScript >> for32Bits [
 
 	| copy |
@@ -65,7 +66,7 @@ ZeroConfPrefixedScript >> for32Bits [
 	^ copy
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 ZeroConfPrefixedScript >> for64Bits [
 
 	| copy |
@@ -74,7 +75,7 @@ ZeroConfPrefixedScript >> for64Bits [
 	^ copy
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfPrefixedScript >> generatePrefixScripts [
 
 	self prefixScripts do: [ :script |
@@ -82,24 +83,24 @@ ZeroConfPrefixedScript >> generatePrefixScripts [
 		self cr. ].
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfPrefixedScript >> generateScripts [
 		
 	^ self prefixScripts, self scripts
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 ZeroConfPrefixedScript >> initialize [
 	prefixScripts := OrderedCollection new.
 	^ super initialize
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfPrefixedScript >> prefixScripts [
 	^ prefixScripts
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfPrefixedScript >> prefixScripts: aCollection [
 	
 	prefixScripts := aCollection

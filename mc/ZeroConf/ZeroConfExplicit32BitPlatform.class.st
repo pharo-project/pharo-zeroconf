@@ -1,24 +1,25 @@
 Class {
-	#name : #ZeroConfExplicit32BitPlatform,
-	#superclass : #ZeroConfCurrentPlatform,
-	#category : 'ZeroConf'
+	#name : 'ZeroConfExplicit32BitPlatform',
+	#superclass : 'ZeroConfCurrentPlatform',
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfExplicit32BitPlatform >> baseUrlFor: aScript [
 
 	"Default scripts are hosted in the 32 bit subdirectory"
 	^ aScript basicBaseUrl / '32'
 ]
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfExplicit32BitPlatform >> directoryFor: aScript [
 
 	"32 bit scripts are written in the 32 bit subdirectory"
 	^ aScript baseDirectory / '32'
 ]
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfExplicit32BitPlatform >> generateArchitectureDetectionOn: aStream [
 
 	super generateArchitectureDetectionOn: aStream.

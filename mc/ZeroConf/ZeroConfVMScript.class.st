@@ -2,36 +2,37 @@
 I generate a downloader script in bash for the given type of VM
 "
 Class {
-	#name : #ZeroConfVMScript,
-	#superclass : #AbstractZeroConfBashScript,
+	#name : 'ZeroConfVMScript',
+	#superclass : 'AbstractZeroConfBashScript',
 	#instVars : [
 		'type',
 		'release',
 		'vmDirectory',
 		'arch'
 	],
-	#category : 'ZeroConf'
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfVMScript class >> latestPharo [
 	^ ZeroConfVMLatestScript pharo
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfVMScript class >> pharo [
 	^ self type: 'pharo'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfVMScript class >> type: aVMTypeString [
 	^ self new
 		type: aVMTypeString;
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> artifactDescription [
 	^ Dictionary new
 		at: self vmFolderName,'/' 	put: 'Directory containing the VM';
@@ -40,17 +41,17 @@ ZeroConfVMScript >> artifactDescription [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> binaryName [
 	^ self type capitalized
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> binaryNameLinux [
 	^ self type asLowercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> binaryNameWindows [
 	"Starting with 60, PharoVM has also PharoConsole.exe, to allow write to console"
 	| binaryNameSuffix |
@@ -61,19 +62,19 @@ ZeroConfVMScript >> binaryNameWindows [
 	^ self binaryName , binaryNameSuffix
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> defaultBasename [
 	^ release 
 		ifNil: [ 'vm' ]
 		ifNotNil: [ 'vm', self release capitalized ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> description [
 	^ 'This script downloads the ', self release asString, ' ', self type capitalized, ' VM.'
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMScript >> generateBody [
 	self
 		generateVmProperties; cr; cr;
@@ -84,13 +85,13 @@ ZeroConfVMScript >> generateBody [
 		generateLinuxScriptTest
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMScript >> generateDetectSystemProperties [
 	
 	platform generateOperatingSystemDetectionOn: self
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMScript >> generateDownloadSources [
 	self
 		<<== 'DOWNLOAD THE PHARO ARCHIVED SOURCES FILE';
@@ -120,7 +121,7 @@ download_sources PharoV30
 download_sources PharoV40'; cr
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMScript >> generateDownloadVm [
 	self 
 		<<== ('DOWNLOAD THE LATEST ', self type asUppercase, ' VM')
@@ -148,7 +149,7 @@ echo $PHARO_VM'; cr
 
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMScript >> generateLinuxScriptTest [
 	self
 		<<== 'TEST VM REQUIREMENTS UNDER LINUX'
@@ -160,7 +161,7 @@ fi'; cr
 
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMScript >> generateVmProperties [
 	self 
 		<<== 'VM PROPERTIES';
@@ -170,7 +171,7 @@ ZeroConfVMScript >> generateVmProperties [
 		<< 'VM_BINARY_NAME_WINDOWS="'; << self binaryNameWindows; << '"'; cr
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMScript >> generateVmScriptCreator [
 	self 
 		<<== 'CREATE THE VM LAUNCHER SCRIPTS'
@@ -213,60 +214,60 @@ create_vm_script "{2}"
 create_vm_script "{2}-ui"' format: {self optionDash. self type}); cr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> optionDash [
 	^ '--'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> release [
 	^ release ifNil: [ 'stable' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> release: aString [
 	release := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> type [
 	
 	^ type
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> type: anObject [
 	
 	type := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> vmBaseUrl [
 	^ self fileBaseUrl / 'vm' / self type
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> vmDirectory [
 	^ vmDirectory ifNil: [ 'pharo-vm' asFileReference ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> vmDirectory: aFileReference [
 	vmDirectory := aFileReference
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> vmDirectoryPathString [
 	self flag: 'Return a relative path if possible...'.
 	^ self vmDirectory basename
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> vmFolderName [
 	^ self vmDirectory basename
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMScript >> vmUrl [
 	^'http://files.pharo.org/vm/${VM_TYPE}/${OS}/' , self release asString , '.zip'
 ]

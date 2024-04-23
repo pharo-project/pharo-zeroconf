@@ -1,1 +1,1 @@
-Package { #name : #ZeroConf }
+Package { #name : 'ZeroConf' }
