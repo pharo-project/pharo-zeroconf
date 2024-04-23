@@ -2,26 +2,28 @@
 Temporary script to overcome the migration form single dash ""-help"" options to double dash ""--help"" options in the pharo vm.
 "
 Class {
-	#name : #ZeroConfVMVersionScript,
-	#superclass : #ZeroConfVMScript,
+	#name : 'ZeroConfVMVersionScript',
+	#superclass : 'ZeroConfVMScript',
 	#instVars : [
 		'status'
 	],
-	#category : 'ZeroConf-Unity'
+	#category : 'ZeroConf-Unity',
+	#package : 'ZeroConf',
+	#tag : 'Unity'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 ZeroConfVMVersionScript class >> basenameVM [
 	^ 'vm'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfVMVersionScript class >> latestPharo: version [ 
 	
 	^ self pharo: version status: #latest
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfVMVersionScript class >> pharo: version status: status [ 
 	^ self 
 		type: 'pharo'
@@ -29,13 +31,13 @@ ZeroConfVMVersionScript class >> pharo: version status: status [
 		status: status
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfVMVersionScript class >> stablePharo: version [ 
 	
 	^ self pharo: version status: #stable
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfVMVersionScript class >> type: aVMTypeString release: version status: status [
 	^ self new
 		type: aVMTypeString;
@@ -44,7 +46,7 @@ ZeroConfVMVersionScript class >> type: aVMTypeString release: version status: st
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMVersionScript >> basename [
 	^ ((self release = 'stable') or: [ self release = 'latest' ])
 		ifTrue: [ self commonBasename ]
@@ -53,7 +55,7 @@ ZeroConfVMVersionScript >> basename [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMVersionScript >> basenameForCombinedIn: script [ 
 	| baseScript |
 	baseScript := script scripts first.
@@ -62,7 +64,7 @@ ZeroConfVMVersionScript >> basenameForCombinedIn: script [
 		ifFalse: [ self basename ] 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMVersionScript >> commonBasename [
 	"Calculates a 'generic' basename, which means a basename without version number"
 	| base |
@@ -73,19 +75,19 @@ ZeroConfVMVersionScript >> commonBasename [
 	^ base
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMVersionScript >> description [ 
 	^ 'This script downloads the ', self status, ' ', self type capitalized, ' VM for ', self release asString, '.'
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMVersionScript >> generateBody [
 	self generateVersionProperties; cr; cr.
 	super generateBody
 		
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMVersionScript >> generateDownloadSources [
 	(self release asNumber >= 70) ifTrue: [ ^ self ]. 
 	self
@@ -109,7 +111,7 @@ unzip -q $VM_DIR/sources.zip -d $SOURCES_DIR
 rm -rf $VM_DIR/sources.zip'; cr
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMVersionScript >> generateDownloadVm [
 	self 
 		<<== ('DOWNLOAD {1} FOR {2} VM' format: { self type asUppercase. self release asString })
@@ -136,7 +138,7 @@ fi
 echo $PHARO_VM'; cr
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMVersionScript >> generateVersionProperties [
 	self 
 		<<== 'RELEASE VERSION';
@@ -145,28 +147,28 @@ ZeroConfVMVersionScript >> generateVersionProperties [
 
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMVersionScript >> generateVmProperties [
 	super generateVmProperties.
 	self << 'VM_STATUS="'; << self status; << '"'; cr.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ZeroConfVMVersionScript >> isLatest [
 	^ self status asString = 'latest'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMVersionScript >> status [
 	^ status ifNil: [ #stable ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMVersionScript >> status: anObject [
 	status := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMVersionScript >> url [
 	| base |
 	
@@ -175,7 +177,7 @@ ZeroConfVMVersionScript >> url [
 	^ self baseUrl / (base, release capitalized)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMVersionScript >> vmUrl [
 	^'${FILES_URL}/${VM_TYPE}-vm-${OSNAME}-${VM_ARCH}-${VM_STATUS}.zip'
 ]

@@ -2,12 +2,13 @@
 Temporary script to overcome the migration form single dash ""-help"" options to double dash ""--help"" options in the pharo vm.
 "
 Class {
-	#name : #ZeroConfVMLatestScript,
-	#superclass : #ZeroConfVMScript,
-	#category : 'ZeroConf'
+	#name : 'ZeroConfVMLatestScript',
+	#superclass : 'ZeroConfVMScript',
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfVMLatestScript >> generateVmScriptCreator [
 	self 
 		<<== 'CREATE THE VM LAUNCHER SCRIPTS'
@@ -45,18 +46,18 @@ create_vm_script "{2}"
 create_vm_script "{2}-ui"' format: {self optionDash. self type}); cr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMLatestScript >> initialize [
 	super initialize.
 	self release: 'latest'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMLatestScript >> optionDash [
 	^ '--'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfVMLatestScript >> release [
 	^ 'latest'
 ]

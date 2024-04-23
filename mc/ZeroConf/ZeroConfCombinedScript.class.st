@@ -3,22 +3,23 @@ I combine several ZeroConf scripts.
 For simplicity I simply download and execute each subscript separately.
 "
 Class {
-	#name : #ZeroConfCombinedScript,
-	#superclass : #AbstractZeroConfBashScript,
+	#name : 'ZeroConfCombinedScript',
+	#superclass : 'AbstractZeroConfBashScript',
 	#instVars : [
 		'scripts'
 	],
-	#category : 'ZeroConf'
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfCombinedScript class >> with: aScript [ 
 	^ self new
 		add: aScript;
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ZeroConfCombinedScript class >> with: aScript with: anotherScript [
 	^ self new
 		add: aScript;
@@ -26,22 +27,22 @@ ZeroConfCombinedScript class >> with: aScript with: anotherScript [
 		yourself
 ]
 
-{ #category : #combining }
+{ #category : 'combining' }
 ZeroConfCombinedScript >> , otherZeroConf [
 	^ otherZeroConf combinedWithAll: self
 ]
 
-{ #category : #subscripts }
+{ #category : 'subscripts' }
 ZeroConfCombinedScript >> add: aZeroConfScript [
 	^ scripts add: aZeroConfScript
 ]
 
-{ #category : #subscripts }
+{ #category : 'subscripts' }
 ZeroConfCombinedScript >> addAll: newScripts [
 	^ scripts addAll: newScripts
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCombinedScript >> artifactDescription [
 	| artifactDescription |
 	artifactDescription := Dictionary new.
@@ -56,7 +57,7 @@ ZeroConfCombinedScript >> artifactDescription [
  	^ artifactDescription
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCombinedScript >> defaultBasename [
 	^ String streamContents: [ :stream | 
 		(self scripts 
@@ -65,14 +66,14 @@ ZeroConfCombinedScript >> defaultBasename [
 			separatedBy: [ stream nextPut: $+ ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCombinedScript >> description [
 	^ String streamContents:  [ :stream |
 		self scripts do: [ :script | 
 			stream nextPutAll: script description; cr]]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCombinedScript >> for32Bits [
 
 	| copy |
@@ -81,7 +82,7 @@ ZeroConfCombinedScript >> for32Bits [
 	^ copy
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCombinedScript >> for64Bits [
 
 	| copy |
@@ -90,36 +91,36 @@ ZeroConfCombinedScript >> for64Bits [
 	^ copy
 ]
 
-{ #category : #'script generation' }
+{ #category : 'script generation' }
 ZeroConfCombinedScript >> generateBody [
 	self <<== 'DOWNLOAD SUB-SCRIPTS'.
 	self generateScripts do: [ :script |
 		self generateDownloadFor: script ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCombinedScript >> generateScripts [
 	"Returns a list of zeroconf script objects that are used to generate the final bash script"
 	^ self scripts
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 ZeroConfCombinedScript >> initialize [
 	super initialize.
 	scripts := OrderedCollection new.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ZeroConfCombinedScript >> isCombined [
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCombinedScript >> scripts [
 	^ scripts
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ZeroConfCombinedScript >> scripts: aCollection [
 	
 	scripts := aCollection

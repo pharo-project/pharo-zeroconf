@@ -1,24 +1,25 @@
 Class {
-	#name : #ZeroConfExplicit64BitPlatform,
-	#superclass : #ZeroConfCurrentPlatform,
-	#category : 'ZeroConf'
+	#name : 'ZeroConfExplicit64BitPlatform',
+	#superclass : 'ZeroConfCurrentPlatform',
+	#category : 'ZeroConf',
+	#package : 'ZeroConf'
 }
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfExplicit64BitPlatform >> baseUrlFor: aScript [
 
 	"Default scripts are hosted in the 64 bit subdirectory"
 	^ aScript basicBaseUrl / '64'
 ]
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfExplicit64BitPlatform >> directoryFor: aScript [
 
 	"64 bit scripts are written in the 64 bit subdirectory"
 	^ aScript baseDirectory / '64'
 ]
 
-{ #category : #generation }
+{ #category : 'generation' }
 ZeroConfExplicit64BitPlatform >> generateArchitectureDetectionOn: aStream [
 
 	super generateArchitectureDetectionOn: aStream.
