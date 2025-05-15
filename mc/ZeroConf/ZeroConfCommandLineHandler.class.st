@@ -19,7 +19,7 @@ Class {
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> alphaVersion [
  
-	^ 130
+	^ 140
 ]
 
 { #category : 'accessing' }
@@ -52,25 +52,25 @@ ZeroConfCommandLineHandler class >> generateInDirectory: aReference [
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> image64Versions [
 
-	^ #(130 120 110 100 90 80 70 61 60)
+	^ #(140 130 120 110 100 90 80 70 61 60)
 ]
 
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> imageVersions [
 
-	^ #(130 120 110 100 90)
+	^ #(140 130 120 110 100 90)
 ]
 
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> stable64Version [ 
 
-	^ 120
+	^ 130
 ]
 
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> stableVersion [
  
-	^ 120
+	^ self stable64Version
 ]
 
 { #category : 'private' }
