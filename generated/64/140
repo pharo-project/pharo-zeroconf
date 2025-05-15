@@ -27,15 +27,10 @@ fi
 
 # ARGUMENT HANDLING =============================================================
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-	echo "This script downloads the latest Pharo 130 Image.
-This script downloads the stable Pharo VM for 130.
-
+	echo "This script downloads the latest Pharo 140 Image.
 The following artifacts are created:
     Pharo.changes  A changes file for the Pharo Image
     Pharo.image    A Pharo image, to be opened with the Pharo VM
-    pharo          Script to run the downloaded VM in headless mode
-    pharo-ui       Script to run the downloaded VM in UI mode
-    pharo-vm/      Directory containing the VM
 "
 	exit 0;
 elif [ $# -gt 0 ]; then
@@ -44,11 +39,48 @@ elif [ $# -gt 0 ]; then
 fi
 
 
-# DOWNLOAD SUB-SCRIPTS ==========================================================
-# This script downloads the latest Pharo 130 Image. -----------------------------
-$DOWNLOAD https://get.pharo.org/64/stable | bash 
-# This script downloads the stable Pharo VM for 130. ----------------------------
-$DOWNLOAD https://get.pharo.org/64/vm130 | bash 
+# RELEASE VERSION ===============================================================
+ARCH=`uname -m`
+# SEARCH FOR THE CORRESPONDING 64bit ARCHITECTURE ===============================
+case "${ARCH}" in
+    x86*)    ARCH="x86_64";;
+    *)       OSNAME="UNKNOWN:${ARCH}"
+esac
+
+VERSION="140"
+FILES_URL="http://files.pharo.org/get-files/${VERSION}"
+IMAGE_FILE_NAME="pharoImage-${ARCH}"
+
+
+# DOWNLOADING THE LATEST PHARO 140 IMAGE ========================================
+IMAGE_URL="${FILES_URL}/${IMAGE_FILE_NAME}.zip"
+
+echoerr "Downloading the latest 140 Image:"
+echoerr "    $IMAGE_URL"
+
+TMP_DIR=`mktemp -d image.XXXXXX`
+$DOWNLOAD_TO$TMP_DIR/image.zip $IMAGE_URL
+
+unzip -q $TMP_DIR/image.zip -d $TMP_DIR
+rm -rf image image.zip
+
+if [ -e Pharo.image ]; then
+	BKDATE=`date +%Y%m%d%H%M`
+	cp -f Pharo.image Pharo.image.bak.$BKDATE
+	cp -f Pharo.changes Pharo.changes.bak.$BKDATE
+fi
+PHARO_IMAGE=`find $TMP_DIR -name \*.image`
+mv -f "$PHARO_IMAGE" Pharo.image
+PHARO_CHANGES=`find $TMP_DIR -name \*.changes`
+mv -f "$PHARO_CHANGES" Pharo.changes;
+
+PHARO_IMAGE_SOURCES=`find $TMP_DIR -name \*.sources`
+PHARO_IMAGE_SOURCES_FILENAME=$(basename "$PHARO_IMAGE_SOURCES")
+mv -i "$PHARO_IMAGE_SOURCES" "$PHARO_IMAGE_SOURCES_FILENAME"
+
+rm -r $TMP_DIR >> /dev/null
+
+echo Pharo.image
 
 
 # HTML HELP =====================================================================
@@ -79,21 +111,16 @@ HTML_HELP=<<HTML_HELP
 	</style>
 <body>
 <h1>Pharo Zeroconf Script</h1>
-<p>This script downloads the latest Pharo 130 Image.<br/>
-This script downloads the stable Pharo VM for 130.<br/>
-</p>
+<p>This script downloads the latest Pharo 140 Image.</p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/64/stable+vm">https://get.pharo.org/64/stable+vm</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/64/140">https://get.pharo.org/64/140</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/64/stable+vm">https://get.pharo.org/64/stable+vm</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/64/140">https://get.pharo.org/64/140</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>
-<tr><td>Pharo.image</td><td>A Pharo image, to be opened with the Pharo VM</td></tr>
-<tr><td>pharo</td><td>Script to run the downloaded VM in headless mode</td></tr>
-<tr><td>pharo-ui</td><td>Script to run the downloaded VM in UI mode</td></tr>
-<tr><td>pharo-vm/</td><td>Directory containing the VM</td></tr></table>
+<tr><td>Pharo.image</td><td>A Pharo image, to be opened with the Pharo VM</td></tr></table>
 
 <!--
 HTML_HELP
