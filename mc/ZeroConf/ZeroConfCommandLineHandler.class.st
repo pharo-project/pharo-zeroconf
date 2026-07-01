@@ -19,7 +19,7 @@ Class {
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> alphaVersion [
  
-	^ 140
+	^ 150
 ]
 
 { #category : 'accessing' }
@@ -52,13 +52,13 @@ ZeroConfCommandLineHandler class >> generateInDirectory: aReference [
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> image64Versions [
 
-	^ #(140 130 120 110 100 90 80 70 61 60)
+	^ #(150 140 130 120 110 100 90 80 70 61 60)
 ]
 
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> imageVersions [
 
-	^ #(140 130 120 110 100 90)
+	^ #(150 140 130 120 110 100 90)
 ]
 
 { #category : 'accessing' }
@@ -144,6 +144,11 @@ ZeroConfCommandLineHandler >> generateScripts [
 	self generate: self indexScript
 ]
 
+{ #category : 'testing' }
+ZeroConfCommandLineHandler >> hasOption: aString [
+	^ self commandLine hasOption: aString
+]
+
 { #category : 'accessing scripts' }
 ZeroConfCommandLineHandler >> imageScripts [
 	^ self symbolicImageScripts, self numericImageScripts, self minimalScripts
@@ -203,6 +208,12 @@ ZeroConfCommandLineHandler >> minimalScripts [
 ZeroConfCommandLineHandler >> numericImageScripts [
 	^ self imageVersions collect: [ :version|
 		ZeroConfImageVersionScript pharo: version ]
+]
+
+{ #category : 'accessing' }
+ZeroConfCommandLineHandler >> optionAt: aString [ 
+	
+	^ self commandLine optionAt: aString 
 ]
 
 { #category : 'accessing' }
