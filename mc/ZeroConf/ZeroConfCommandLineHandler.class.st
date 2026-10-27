@@ -64,7 +64,7 @@ ZeroConfCommandLineHandler class >> imageVersions [
 { #category : 'accessing' }
 ZeroConfCommandLineHandler class >> stable64Version [ 
 
-	^ 130
+	^ 140
 ]
 
 { #category : 'accessing' }
